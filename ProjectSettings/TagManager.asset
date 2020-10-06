@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Waypoint
+  - Spawn point
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -13,12 +16,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - NonRendered
+  - Player
+  - Enemy
+  - Projectile
+  - Interactable
+  - NonInteractable
   - 
   - 
   - 
@@ -38,6 +41,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 831966677
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Units
+    uniqueID: 677289473
+    locked: 0
+  - name: Effects
+    uniqueID: 1092537573
+    locked: 0
+  - name: Overlay
+    uniqueID: 3549257443
     locked: 0
