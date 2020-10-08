@@ -1652,6 +1652,24 @@ MonoBehaviour:
   ragdollBody: {fileID: 1147712495790696153}
   solidBody: {fileID: 5957210566694124934}
   <IsRagdoll>k__BackingField: 0
+--- !u!114 &4061773210683893509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979954324139301830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a31dcf3a4077647924231a3d662f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  solidBody: {fileID: 5957210566694124934}
+  jumpSpeed: 450
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 65536
+  maxJumpsCount: 2
 --- !u!95 &6446778890669848406
 Animator:
   serializedVersion: 3

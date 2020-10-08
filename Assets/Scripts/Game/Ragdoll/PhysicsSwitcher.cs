@@ -12,15 +12,8 @@ public class PhysicsSwitcher : MonoBehaviour
     {
         UpdatePhysicsState();
     }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Switch();
-        }
-    }
     
+    [ContextMenu("Switch test")]
     public void Switch()
     {
         IsRagdoll = !IsRagdoll;
