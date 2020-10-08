@@ -22,8 +22,8 @@ TagManager:
   - Projectile
   - Interactable
   - NonInteractable
-  - 
-  - 
+  - Ragdoll
+  - Solid
   - 
   - 
   - 
