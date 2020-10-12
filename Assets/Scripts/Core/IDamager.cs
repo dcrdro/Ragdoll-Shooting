@@ -1,4 +1,4 @@
 ﻿public interface IDamager
 {
-     void Damage(IHealth health);
+     void Damage(IDamagable damagable);
 }
