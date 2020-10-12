@@ -10,8 +10,8 @@ public class BulletProjectile : MonoBehaviour, IDamager
         bulletRigidbody.AddForce(velocity);
     }
 
-    public void Damage(IHealth health)
+    public void Damage(IDamagable damagable)
     {
-        health.UpdateHealth(-damage);
+        damagable.TakeDamage(damage);
     }
 }
