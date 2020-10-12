@@ -245,7 +245,7 @@ PrefabInstance:
     - target: {fileID: 333169762369821495, guid: bafd274955b480648a9bd8c11bbc6abd,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.06498024
+      value: -0.06497976
       objectReference: {fileID: 0}
     - target: {fileID: 333169762369821495, guid: bafd274955b480648a9bd8c11bbc6abd,
         type: 3}
@@ -280,7 +280,7 @@ PrefabInstance:
     - target: {fileID: 907634293965288762, guid: bafd274955b480648a9bd8c11bbc6abd,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.0030002594
+      value: 0.0029997826
       objectReference: {fileID: 0}
     - target: {fileID: 907634293965288762, guid: bafd274955b480648a9bd8c11bbc6abd,
         type: 3}
@@ -335,12 +335,12 @@ PrefabInstance:
     - target: {fileID: 1795033993970753657, guid: bafd274955b480648a9bd8c11bbc6abd,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.021308906
+      value: -0.021308903
       objectReference: {fileID: 0}
     - target: {fileID: 1795033993970753657, guid: bafd274955b480648a9bd8c11bbc6abd,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 1.2288254
+      value: 1.228825
       objectReference: {fileID: 0}
     - target: {fileID: 1875598606663575637, guid: bafd274955b480648a9bd8c11bbc6abd,
         type: 3}
@@ -465,7 +465,7 @@ PrefabInstance:
     - target: {fileID: 6051683387765310624, guid: bafd274955b480648a9bd8c11bbc6abd,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.6000004
+      value: 0.5999999
       objectReference: {fileID: 0}
     - target: {fileID: 6602590818817254557, guid: bafd274955b480648a9bd8c11bbc6abd,
         type: 3}
