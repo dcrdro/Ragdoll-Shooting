@@ -16,12 +16,4 @@ public class Weaponer : MonoBehaviour
         weapon.Shoot();
         OnAppliedWeapon?.Invoke();
     }
-
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            ApplyWeapon();
-        }
-    }
 }

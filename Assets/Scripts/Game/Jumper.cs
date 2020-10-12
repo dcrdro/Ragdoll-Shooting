@@ -17,14 +17,6 @@ public class Jumper : MonoBehaviour
 
     public event Action OnJumped;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TryJump();
-        }
-    }
-    
     [ContextMenu("Jump test")]
     public bool TryJump ()
     {
