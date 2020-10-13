@@ -1784,19 +1784,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 65536
   maxJumpsCount: 2
---- !u!114 &8011750703514778132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7979954324139301830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61db55e7d24f8d3488844d94675777fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthMax: 100
 --- !u!114 &6196206268536245879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1817,6 +1804,20 @@ MonoBehaviour:
   - {fileID: 6888693832713057576}
   - {fileID: 7880987344700786693}
   - {fileID: 811615914468045930}
+  hitboxMapper: {fileID: 11400000, guid: 3f60dc7db20f08446b7ca295d6d1af95, type: 2}
+--- !u!114 &8011750703514778132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979954324139301830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61db55e7d24f8d3488844d94675777fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 100
 --- !u!95 &6446778890669848406
 Animator:
   serializedVersion: 3

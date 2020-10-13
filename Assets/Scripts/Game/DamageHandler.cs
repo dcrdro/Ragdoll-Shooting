@@ -4,6 +4,7 @@ public class DamageHandler : MonoBehaviour
 {
     [SerializeField] private MonoBehaviour health; // rework
     [SerializeField] private HitReceiver[] hitReceivers;
+    [SerializeField] private HitboxConfigMapper hitboxMapper;
     
     private IDamagable Health => (IDamagable) health;
 
@@ -27,8 +28,9 @@ public class DamageHandler : MonoBehaviour
 
     private void OnDamageTaken(IDamagable source, float damage)
     {
-        Health.TakeDamage(damage);
         HitboxID hitboxId = ((HitReceiver) source).HitboxID;
-        print("on hit received: " + damage + ", " + hitboxId);
+        float totalDamage = damage * hitboxMapper[hitboxId].DamageMultiplier;
+        Health.TakeDamage(totalDamage);
+        print("on hit received: " + totalDamage + ", " + hitboxId);
     }
 }

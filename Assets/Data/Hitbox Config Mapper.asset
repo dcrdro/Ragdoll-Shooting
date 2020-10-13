@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HitboxConfigMapper
   mapperKeys: 010000000200000003000000
   mapperValues:
-  - 2
-  - 1
-  - 0.5
+  - DamageMultiplier: 2
+  - DamageMultiplier: 1
+  - DamageMultiplier: 0.5
