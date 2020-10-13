@@ -1,12 +1,10 @@
 ﻿using System;
 
-public interface IHealth
+public interface IHealth : IDamagable
 {
     float HealthAmount { get; }
     float MaxHealthAmount { get; }
     bool IsDead { get; }
-    void UpdateHealth(float amount);
 
-    event Action OnHealthUpdated;
     event Action OnDied;
 }

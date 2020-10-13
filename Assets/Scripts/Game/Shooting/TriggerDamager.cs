@@ -3,7 +3,7 @@
 public class TriggerDamager : MonoBehaviour
 {
     [SerializeField] private TriggerSender2D trigger;
-    [SerializeField] private MonoBehaviour damager;
+    [SerializeField] private MonoBehaviour damager; // rework
     
     private IDamager Damager => (IDamager) damager;
 
@@ -19,12 +19,9 @@ public class TriggerDamager : MonoBehaviour
 
     private void OnTrigger(Collider2D obj)
     {
-        if (obj.TryGetComponent<IRootReference>(out var root))
+        if (obj.TryGetComponent<IDamagable>(out var damagable))
         {
-            if (root.RootObject.TryGetComponent<IHealth>(out var health))
-            {
-                Damager.Damage(health);
-            }
+            Damager.Damage(damagable);
         }
     }
 }

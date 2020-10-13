@@ -10,7 +10,7 @@ public class Health : MonoBehaviour, IHealth
 
     public bool IsDead => HealthAmount <= 0;
 
-    public event Action OnHealthUpdated;
+    public event Action<IDamagable, float> OnDamageTaken;
     public event Action OnDied;
 
     private void Awake()
@@ -18,12 +18,12 @@ public class Health : MonoBehaviour, IHealth
         HealthAmount = healthMax;
     }
 
-    public void UpdateHealth(float amount)
+    public void TakeDamage(float damage)
     {
-        HealthAmount += amount;
+        HealthAmount -= damage;
         HealthAmount = Mathf.Clamp(HealthAmount, 0, healthMax);
 
-        OnHealthUpdated?.Invoke();
+        OnDamageTaken?.Invoke(this, damage);
         print("health: " + HealthAmount);
         if (HealthAmount <= 0)
         {
