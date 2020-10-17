@@ -8,7 +8,7 @@ public class ExplosionCollidable : MonoBehaviour, ICollidable, IRootReference
     [SerializeField] private Transform explosionPoint;
     [SerializeField] private float explosionRadius; // move some field out of this class ?
     [SerializeField] private float damage;
-    [SerializeField] private float force;
+    [SerializeField] private Vector2 explosionVelocity;
     [SerializeField] private GameObject rootObject;
 
     public GameObject RootObject => rootObject;
@@ -47,12 +47,15 @@ public class ExplosionCollidable : MonoBehaviour, ICollidable, IRootReference
         foreach (var receiver in receivers)
         {
             receiver.TakeDamage(damage); // replace to IDamager ?
-            receiver.ApplyForce(Vector3.right * force); // ! refactor
+            Vector3 distance = receiver.transform.position - explosionPoint.position;
+            float powerMultiplier = Mathf.InverseLerp(explosionRadius, 0, distance.magnitude);
+            Vector3 force = distance.normalized * powerMultiplier * explosionVelocity;
+            receiver.ApplyForce(force);
         }
     }
 
 #if UNITY_EDITOR
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(explosionPoint.position, explosionRadius);
