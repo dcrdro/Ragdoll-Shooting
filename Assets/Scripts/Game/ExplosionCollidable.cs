@@ -54,7 +54,9 @@ public class ExplosionCollidable : MonoBehaviour, ICollidable, IRootReference
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(explosionPoint.position, explosionRadius);
+        Gizmos.color = Color.white;
     }
 #endif
 }

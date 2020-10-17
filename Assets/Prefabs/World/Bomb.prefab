@@ -65,6 +65,7 @@ MonoBehaviour:
   explosionPoint: {fileID: 821157370965886936}
   explosionRadius: 5.39
   damage: 5
+  force: 2000
   rootObject: {fileID: 2310308077454553661}
 --- !u!1 &8935663118232519297
 GameObject:
