@@ -15,5 +15,8 @@ MonoBehaviour:
   mapperKeys: 010000000200000003000000
   mapperValues:
   - DamageMultiplier: 2
+    ForceMultiplier: 0.75
   - DamageMultiplier: 1
+    ForceMultiplier: 2
   - DamageMultiplier: 0.5
+    ForceMultiplier: 1.25

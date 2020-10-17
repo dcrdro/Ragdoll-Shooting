@@ -4,4 +4,5 @@
 public struct HitboxConfig
 {
     public float DamageMultiplier;
+    public float ForceMultiplier;
 }
