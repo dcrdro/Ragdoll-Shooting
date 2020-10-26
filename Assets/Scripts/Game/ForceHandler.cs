@@ -29,8 +29,9 @@ public class ForceHandler : MonoBehaviour
         HitReceiver receiver = (HitReceiver)source;
         HitboxID hitboxId = receiver.HitboxID;
         Vector3 totalForce = force * hitboxMapper[hitboxId].ForceMultiplier;
-
-        source.ApplyForce(totalForce);
+        
+        var bone = receiver.GetComponent<RagdollBone>();
+        bone.ApplyForce(totalForce);
         print("on force received: " + hitboxId + ", " + totalForce);
     }
 }
