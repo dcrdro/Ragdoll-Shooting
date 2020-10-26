@@ -17,8 +17,10 @@ public class Triggerer : MonoBehaviour
         trigger.OnEnter -= OnEnter;
     }
 
-    private void OnEnter(Collider2D obj)
+    private void OnEnter(Collider2D collider)
     {
-        Triggerable.OnTrigger();
+        if ((Triggerable.TriggerableLayer & 1 << collider.gameObject.layer) > 0)
+
+            Triggerable.OnTrigger(collider);
     }
 }

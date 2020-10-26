@@ -17,11 +17,11 @@ public class Collisioner : MonoBehaviour
         trigger.OnEnter -= OnEnter;
     }
 
-    private void OnEnter(Collision2D obj)
+    private void OnEnter(Collision2D collider)
     {
-        if ((Collidable.CollidableLayer & 1 << obj.gameObject.layer) > 0)
+        if ((Collidable.CollidableLayer & 1 << collider.gameObject.layer) > 0)
         {
-            Collidable.OnCollide();
+            Collidable.OnCollide(collider);
         }
     }
 }
