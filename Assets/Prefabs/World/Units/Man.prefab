@@ -99,7 +99,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 0.75
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
@@ -145,7 +145,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 5146167697456509919}
-  m_BreakForce: Infinity
+  m_BreakForce: 900
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 8539178879704198684}
   - component: {fileID: 8482153964210828337}
   - component: {fileID: 1222173825165720253}
+  - component: {fileID: 9189452935451156234}
   m_Layer: 14
   m_Name: Body
   m_TagString: Untagged
@@ -335,6 +336,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitboxID: 2
+--- !u!114 &9189452935451156234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904880135132841163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f7742281fe0674dab746b335df86ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootObject: {fileID: 7979954324139301830}
 --- !u!1 &1216575638628212509
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +364,7 @@ GameObject:
   - component: {fileID: 3531433412048865226}
   - component: {fileID: 4596893812363157964}
   - component: {fileID: 811615914468045930}
+  - component: {fileID: 689674684603345589}
   m_Layer: 14
   m_Name: Left LLeg
   m_TagString: Untagged
@@ -434,7 +449,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
@@ -480,7 +495,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 3432545021142877901}
-  m_BreakForce: Infinity
+  m_BreakForce: 900
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -520,6 +535,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitboxID: 3
+--- !u!114 &689674684603345589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216575638628212509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f7742281fe0674dab746b335df86ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootObject: {fileID: 7979954324139301830}
 --- !u!1 &1266695118803767511
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,6 +563,7 @@ GameObject:
   - component: {fileID: 6886362321397562357}
   - component: {fileID: 5530525858603703544}
   - component: {fileID: 6888693832713057576}
+  - component: {fileID: 3854170042445922702}
   m_Layer: 14
   m_Name: Right LLeg
   m_TagString: Untagged
@@ -619,7 +648,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
@@ -665,7 +694,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 4875987750328684696}
-  m_BreakForce: Infinity
+  m_BreakForce: 900
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -705,6 +734,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitboxID: 3
+--- !u!114 &3854170042445922702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266695118803767511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f7742281fe0674dab746b335df86ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootObject: {fileID: 7979954324139301830}
 --- !u!1 &1953181856172376129
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,6 +762,7 @@ GameObject:
   - component: {fileID: 3957122982755761078}
   - component: {fileID: 819375763469917301}
   - component: {fileID: 1508444840108465957}
+  - component: {fileID: 273628952711769001}
   m_Layer: 14
   m_Name: Right Leg
   m_TagString: Untagged
@@ -805,7 +848,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
@@ -851,7 +894,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 4891432886463893535}
-  m_BreakForce: Infinity
+  m_BreakForce: 900
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -891,6 +934,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitboxID: 3
+--- !u!114 &273628952711769001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953181856172376129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f7742281fe0674dab746b335df86ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootObject: {fileID: 7979954324139301830}
 --- !u!1 &1983821456085598365
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +962,7 @@ GameObject:
   - component: {fileID: 4710038041568236808}
   - component: {fileID: 5048529670346911668}
   - component: {fileID: 9179788099045903982}
+  - component: {fileID: 5798779699232063309}
   m_Layer: 14
   m_Name: Head
   m_TagString: Untagged
@@ -990,7 +1047,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
@@ -1036,7 +1093,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 4891432886463893535}
-  m_BreakForce: Infinity
+  m_BreakForce: 900
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -1076,6 +1133,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitboxID: 1
+--- !u!114 &5798779699232063309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983821456085598365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f7742281fe0674dab746b335df86ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootObject: {fileID: 7979954324139301830}
 --- !u!1 &2124476505238378703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1245,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 0.75
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
@@ -1221,7 +1291,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 1869563408427826598}
-  m_BreakForce: Infinity
+  m_BreakForce: 900
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -1493,7 +1563,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 0.75
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
@@ -1539,7 +1609,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 4891432886463893535}
-  m_BreakForce: Infinity
+  m_BreakForce: 900
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -1665,7 +1735,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 0.75
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
@@ -1711,7 +1781,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 4891432886463893535}
-  m_BreakForce: Infinity
+  m_BreakForce: 900
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -1738,6 +1808,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRigidbody: {fileID: 5146167697456509919}
   boneJoint: {fileID: 68173454199229039}
+--- !u!114 &2935999039847002838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979954324139301830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ecb3611b357a343a6415c0283d73f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitReceivers:
+  - {fileID: 1222173825165720253}
+  - {fileID: 9179788099045903982}
+  - {fileID: 1508444840108465957}
+  - {fileID: 6888693832713057576}
+  - {fileID: 7880987344700786693}
+  - {fileID: 811615914468045930}
+  hitboxMapper: {fileID: 11400000, guid: 3f60dc7db20f08446b7ca295d6d1af95, type: 2}
 --- !u!114 &3326624686441452106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2138,6 +2228,7 @@ GameObject:
   - component: {fileID: 3371099633623618043}
   - component: {fileID: 1444689726676841638}
   - component: {fileID: 7880987344700786693}
+  - component: {fileID: 6439956623936213516}
   m_Layer: 14
   m_Name: Left Leg
   m_TagString: Untagged
@@ -2223,7 +2314,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
@@ -2269,7 +2360,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 4891432886463893535}
-  m_BreakForce: Infinity
+  m_BreakForce: 900
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -2309,6 +2400,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitboxID: 3
+--- !u!114 &6439956623936213516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7074141621283506820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f7742281fe0674dab746b335df86ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootObject: {fileID: 7979954324139301830}
 --- !u!1 &7298072502393218512
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,7 +2542,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 0.75
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
@@ -2484,7 +2588,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 4507430671386859020}
-  m_BreakForce: Infinity
+  m_BreakForce: 900
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -2610,7 +2714,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 0.75
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
@@ -2656,7 +2760,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 1820512257477128885}
-  m_BreakForce: Infinity
+  m_BreakForce: 900
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -2787,9 +2891,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b47a6f2664f78394baf59f55fdf05541, type: 3}
---- !u!1 &7979954324139301830 stripped
+--- !u!1 &657052335905732097 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 2678916964758497681, guid: b47a6f2664f78394baf59f55fdf05541,
+  m_CorrespondingSourceObject: {fileID: 4795563373336495190, guid: b47a6f2664f78394baf59f55fdf05541,
     type: 3}
   m_PrefabInstance: {fileID: 5445717147786998359}
   m_PrefabAsset: {fileID: 0}
@@ -2799,9 +2903,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5445717147786998359}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &657052335905732097 stripped
+--- !u!1 &7979954324139301830 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4795563373336495190, guid: b47a6f2664f78394baf59f55fdf05541,
+  m_CorrespondingSourceObject: {fileID: 2678916964758497681, guid: b47a6f2664f78394baf59f55fdf05541,
     type: 3}
   m_PrefabInstance: {fileID: 5445717147786998359}
   m_PrefabAsset: {fileID: 0}

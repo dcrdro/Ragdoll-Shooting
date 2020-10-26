@@ -31,7 +31,7 @@ public class Jumper : MonoBehaviour
 
     private void PerformJump()
     {
-        solidBody.StopBody();
+        solidBody.Stop();
         solidBody.ApplyForce(Vector2.up * jumpSpeed);
         UpdateCount();
         OnJumped?.Invoke();
