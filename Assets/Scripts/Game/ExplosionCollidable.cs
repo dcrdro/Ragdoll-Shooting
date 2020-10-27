@@ -4,6 +4,8 @@ using System.Linq;
 
 public class ExplosionCollidable : MonoBehaviour, ICollidable, IRootReference
 {
+    private const int minExplosionRadius = 4;
+    
     [SerializeField] private LayerMask explosionLayer;
     [SerializeField] private Transform explosionPoint;
     [SerializeField] private float explosionRadius; // move some field out of this class ?
@@ -49,7 +51,7 @@ public class ExplosionCollidable : MonoBehaviour, ICollidable, IRootReference
             // split
             receiver.TakeDamage(damage); // replace to IDamager ?
             Vector3 distance = receiver.transform.position - explosionPoint.position;
-            float powerMultiplier = Mathf.InverseLerp(explosionRadius, 0, distance.magnitude);
+            float powerMultiplier = Mathf.InverseLerp(explosionRadius, minExplosionRadius, distance.magnitude); // make via curve ?
             Vector3 force = distance.normalized * powerMultiplier * explosionVelocity;
             receiver.ApplyForce(force);
         }
