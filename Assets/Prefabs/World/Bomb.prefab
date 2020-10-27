@@ -62,7 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionLayer:
     serializedVersion: 2
-    m_Bits: 16384
+    m_Bits: 147456
   explosionPoint: {fileID: 821157370965886936}
   explosionRadius: 5.39
   damage: 5
