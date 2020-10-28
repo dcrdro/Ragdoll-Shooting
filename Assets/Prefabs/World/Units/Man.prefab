@@ -208,6 +208,7 @@ Transform:
   - {fileID: 9166390698802489266}
   - {fileID: 5062321791589949196}
   - {fileID: 4045527441430956783}
+  - {fileID: 4977234161464471299}
   m_Father: {fileID: 2717855964336727844}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1318,6 +1319,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRigidbody: {fileID: 2519831403081558886}
   boneJoint: {fileID: 5467628845407071926}
+--- !u!1 &3071117747523013488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4977234161464471299}
+  m_Layer: 14
+  m_Name: Bonus Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4977234161464471299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3071117747523013488}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.91, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3412150186776200926}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3257603366472168846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1808,6 +1839,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRigidbody: {fileID: 5146167697456509919}
   boneJoint: {fileID: 68173454199229039}
+--- !u!114 &2354156524765794421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979954324139301830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc11dbf82c5242cf9916d83e22322b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {fileID: 7979954324139301830}
 --- !u!114 &2935999039847002838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1908,7 +1952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthMax: 100
---- !u!114 &2354156524765794421
+--- !u!114 &6385881811770433873
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1917,10 +1961,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7979954324139301830}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc11dbf82c5242cf9916d83e22322b07, type: 3}
+  m_Script: {fileID: 11500000, guid: b76d92f191714c8e99ff0809cafe429a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  origin: {fileID: 7979954324139301830}
+  bonusHolder: {fileID: 4977234161464471299}
 --- !u!95 &6446778890669848406
 Animator:
   serializedVersion: 3
