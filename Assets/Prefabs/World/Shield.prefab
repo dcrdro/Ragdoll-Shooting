@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6921823924675369662}
+  - component: {fileID: 6807713437390211596}
+  - component: {fileID: 2348359105474509089}
+  - component: {fileID: 8019646528641359364}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -31,6 +34,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6807713437390211596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619786396543917975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61db55e7d24f8d3488844d94675777fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 1
+--- !u!114 &2348359105474509089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619786396543917975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c59be58f9846ab044b6c620d1e1361f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 6807713437390211596}
+--- !u!114 &8019646528641359364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619786396543917975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51d105591c31423c81240319c3180c60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfHealth: {fileID: 6807713437390211596}
 --- !u!1 &8670941588149333803
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,4 +216,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8f65933ad24d41a9f8b3d6d0f04705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagable: {fileID: 0}
+  damagable: {fileID: 2348359105474509089}
