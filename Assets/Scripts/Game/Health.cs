@@ -10,36 +10,36 @@ public class Health : MonoBehaviour, IHealth
 
     public bool IsDead => HealthAmount <= 0;
 
-    public event Action<IDamagable, float> OnDamageTaken;
-    public event Action<IHealable, float> OnHealTaken;
-    public event Action OnDied;
+    public event Action<IDamagable, DamageArgs> OnDamageTaken;
+    public event Action<IHealable, HealArgs> OnHealTaken;
+    public event Action<DeathArgs> OnDied;
 
     private void Awake()
     {
         HealthAmount = healthMax;
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(DamageArgs args)
     {
-        HealthAmount -= damage;
+        UpdateHealth(args.Origin, args.Dealer, -args.Damage);
+        OnDamageTaken?.Invoke(this, args);
     }
     
-    public void TakeHeal(float heal)
+    public void TakeHeal(HealArgs args)
     {
-        UpdateHealth(+heal);
-        OnHealTaken?.Invoke(this, heal);
+        UpdateHealth(args.Origin, args.Dealer, +args.Heal);
+        OnHealTaken?.Invoke(this, args);
     }
 
-    private void UpdateHealth(float amount)
+    private void UpdateHealth(in GameObject origin, in GameObject dealer, float amount)
     {
         HealthAmount += amount;
         HealthAmount = Mathf.Clamp(HealthAmount, 0, healthMax);
 
-        OnDamageTaken?.Invoke(this, damage);
-        print("health: " + HealthAmount);
+        print("update health: " + HealthAmount);
         if (HealthAmount <= 0)
         {
-            OnDied?.Invoke();
+            OnDied?.Invoke(new DeathArgs(origin, dealer));
         }
     }
 }

@@ -7,11 +7,12 @@ public class PointDamagable : MonoBehaviour, IDamagable
 {
     [SerializeField] private Health health;
     
-    public event Action<IDamagable, float> OnDamageTaken;
+    public event Action<IDamagable, DamageArgs> OnDamageTaken;
     
-    public void TakeDamage(float damage)
+    public void TakeDamage(DamageArgs args)
     {
-        health.TakeDamage(1);
-        OnDamageTaken?.Invoke(this, 1);
+        DamageArgs pointDamageArgs = new DamageArgs(args.Origin, args.Dealer, 1);
+        health.TakeDamage(pointDamageArgs);
+        OnDamageTaken?.Invoke(this, pointDamageArgs);
     }
 }

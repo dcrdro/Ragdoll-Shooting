@@ -2,7 +2,7 @@
 
 public interface IDamagable
 {
-    event Action<IDamagable, float> OnDamageTaken;
+    event Action<IDamagable, DamageArgs> OnDamageTaken;
     
-    void TakeDamage(float damage);
+    void TakeDamage(DamageArgs damageArgs);
 }

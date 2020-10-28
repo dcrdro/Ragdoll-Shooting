@@ -2,7 +2,7 @@
 
 public interface IHealable
 {
-    event Action<IHealable, float> OnHealTaken;
+    event Action<IHealable, HealArgs> OnHealTaken;
     
-    void TakeHeal(float heal);
+    void TakeHeal(HealArgs healArgs);
 }

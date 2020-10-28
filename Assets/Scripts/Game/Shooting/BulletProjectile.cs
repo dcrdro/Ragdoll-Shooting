@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-public class BulletProjectile : MonoBehaviour, IDamager
 public class BulletProjectile : MonoBehaviour, IDamager, IOriginDerived
 {
     [SerializeField] private Rigidbody2D bulletRigidbody;
@@ -15,6 +14,6 @@ public class BulletProjectile : MonoBehaviour, IDamager, IOriginDerived
 
     public void Damage(IDamagable damagable)
     {
-        damagable.TakeDamage(damage);
+        damagable.TakeDamage(new DamageArgs(Origin, gameObject, damage));
     }
 }

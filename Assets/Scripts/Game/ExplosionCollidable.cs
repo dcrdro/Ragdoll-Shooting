@@ -49,7 +49,8 @@ public class ExplosionCollidable : MonoBehaviour, ICollidable, IRootReference
         foreach (var receiver in receivers)
         {
             // split
-            receiver.TakeDamage(damage); // replace to IDamager ?
+            DamageArgs damageArgs = new DamageArgs(null, RootObject, damage);
+            receiver.TakeDamage(damageArgs); // replace to IDamager ?
             Vector3 distance = receiver.transform.position - explosionPoint.position;
             float powerMultiplier = Mathf.InverseLerp(explosionRadius, minExplosionRadius, distance.magnitude); // make via curve ?
             Vector3 force = distance.normalized * powerMultiplier * explosionVelocity;
