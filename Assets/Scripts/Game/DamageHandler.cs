@@ -26,11 +26,11 @@ public class DamageHandler : MonoBehaviour
         }        
     }
 
-    private void OnDamageTaken(IDamagable source, float damage)
+    private void OnDamageTaken(IDamagable source, DamageArgs args)
     {
         HitboxID hitboxId = ((HitReceiver) source).HitboxID;
-        float totalDamage = damage * hitboxMapper[hitboxId].DamageMultiplier;
-        Health.TakeDamage(totalDamage);
+        float totalDamage = args.Damage * hitboxMapper[hitboxId].DamageMultiplier;
+        Health.TakeDamage(new DamageArgs(args.Origin, args.Dealer, totalDamage));
         print("on hit received: " + totalDamage + ", " + hitboxId);
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7647045689491488638}
   - component: {fileID: 4462805379355420383}
   - component: {fileID: 8734997306762268889}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Left Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1160,7 +1160,7 @@ GameObject:
   - component: {fileID: 3945004286136662383}
   - component: {fileID: 5467628845407071926}
   - component: {fileID: 9077801301776324105}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Right Fist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1478,7 +1478,7 @@ GameObject:
   - component: {fileID: 2568763231308243112}
   - component: {fileID: 964019275423012847}
   - component: {fileID: 4174570538659863541}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Right Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1650,7 +1650,7 @@ GameObject:
   - component: {fileID: 9005119180905344461}
   - component: {fileID: 68173454199229039}
   - component: {fileID: 7433982080668216120}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Left Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1908,6 +1908,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthMax: 100
+--- !u!114 &2354156524765794421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979954324139301830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc11dbf82c5242cf9916d83e22322b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {fileID: 7979954324139301830}
 --- !u!95 &6446778890669848406
 Animator:
   serializedVersion: 3
@@ -2458,7 +2471,7 @@ GameObject:
   - component: {fileID: 3082488721484874147}
   - component: {fileID: 6311371279425213944}
   - component: {fileID: 1075806393428566585}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Left Fist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2629,7 +2642,7 @@ GameObject:
   - component: {fileID: 2061704802026763348}
   - component: {fileID: 2147771554232168779}
   - component: {fileID: 31749112227043131}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Right Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -5,5 +5,5 @@ public interface ICollidable
     // add event ?
     
     LayerMask CollidableLayer { get; }
-    void OnCollide();
+    void OnCollide(Collision2D collision);
 }

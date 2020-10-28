@@ -1,6 +1,9 @@
-﻿public interface ITriggerable
+﻿using UnityEngine;
+
+public interface ITriggerable
 {
     // add event ?
 
-    void OnTrigger();
+    LayerMask TriggerableLayer { get; }
+    void OnTrigger(Collider2D collider);
 }

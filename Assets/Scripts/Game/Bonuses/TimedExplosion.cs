@@ -10,6 +10,6 @@ public class TimedExplosion : MonoBehaviour
     IEnumerator Start()
     {
         yield return new WaitForSeconds(explosionDelay);
-        explosionCollidable.OnCollide();
+        explosionCollidable.OnCollide(null); // rework
     }
 }

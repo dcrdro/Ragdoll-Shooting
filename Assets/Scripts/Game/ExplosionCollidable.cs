@@ -4,6 +4,8 @@ using System.Linq;
 
 public class ExplosionCollidable : MonoBehaviour, ICollidable, IRootReference
 {
+    private const int minExplosionRadius = 4;
+    
     [SerializeField] private LayerMask explosionLayer;
     [SerializeField] private Transform explosionPoint;
     [SerializeField] private float explosionRadius; // move some field out of this class ?
@@ -15,7 +17,7 @@ public class ExplosionCollidable : MonoBehaviour, ICollidable, IRootReference
 
     public LayerMask CollidableLayer => explosionLayer;
 
-    public void OnCollide()
+    public void OnCollide(Collision2D collision)
     {
         IEnumerable<HitReceiver> receivers = Physics2D.OverlapCircleAll(explosionPoint.position, explosionRadius, explosionLayer)
             .Where(c => c.TryGetComponent<HitReceiver>(out _))
@@ -46,9 +48,11 @@ public class ExplosionCollidable : MonoBehaviour, ICollidable, IRootReference
     {
         foreach (var receiver in receivers)
         {
-            receiver.TakeDamage(damage); // replace to IDamager ?
+            // split
+            DamageArgs damageArgs = new DamageArgs(null, RootObject, damage);
+            receiver.TakeDamage(damageArgs); // replace to IDamager ?
             Vector3 distance = receiver.transform.position - explosionPoint.position;
-            float powerMultiplier = Mathf.InverseLerp(explosionRadius, 0, distance.magnitude);
+            float powerMultiplier = Mathf.InverseLerp(explosionRadius, minExplosionRadius, distance.magnitude); // make via curve ?
             Vector3 force = distance.normalized * powerMultiplier * explosionVelocity;
             receiver.ApplyForce(force);
         }
