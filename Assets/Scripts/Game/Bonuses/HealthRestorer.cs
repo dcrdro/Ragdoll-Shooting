@@ -20,6 +20,12 @@ public class HealthRestorer : MonoBehaviour
 
     private void OnSelfDied(DeathArgs deathArgs)
     {
+        RestoreHealth(deathArgs);
+        Destroy(gameObject);
+    }
+
+    private void RestoreHealth(DeathArgs deathArgs)
+    {
         GameObject restoreTarget = deathArgs.Origin;
         if (restoreTarget.TryGetComponent<IHealable>(out var healable))
         {
