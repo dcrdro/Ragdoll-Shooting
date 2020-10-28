@@ -11,6 +11,7 @@ public class Health : MonoBehaviour, IHealth
     public bool IsDead => HealthAmount <= 0;
 
     public event Action<IDamagable, float> OnDamageTaken;
+    public event Action<IHealable, float> OnHealTaken;
     public event Action OnDied;
 
     private void Awake()
@@ -21,6 +22,17 @@ public class Health : MonoBehaviour, IHealth
     public void TakeDamage(float damage)
     {
         HealthAmount -= damage;
+    }
+    
+    public void TakeHeal(float heal)
+    {
+        UpdateHealth(+heal);
+        OnHealTaken?.Invoke(this, heal);
+    }
+
+    private void UpdateHealth(float amount)
+    {
+        HealthAmount += amount;
         HealthAmount = Mathf.Clamp(HealthAmount, 0, healthMax);
 
         OnDamageTaken?.Invoke(this, damage);
