@@ -73,6 +73,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selfHealth: {fileID: 6807713437390211596}
+  bonusPrefab: {fileID: 5326226165138743198, guid: e5c87b254f6a5a748b412e7804fa464f,
+    type: 3}
 --- !u!1 &8670941588149333803
 GameObject:
   m_ObjectHideFlags: 0
