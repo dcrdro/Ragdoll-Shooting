@@ -861,6 +861,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Medicine Kit
       objectReference: {fileID: 0}
+    - target: {fileID: 213848511381828640, guid: bc7fee103bc7c764c8d8de89a629ea72,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2998610810236928453, guid: bc7fee103bc7c764c8d8de89a629ea72,
         type: 3}
       propertyPath: m_LocalPosition.y

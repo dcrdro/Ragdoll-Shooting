@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5090094393300168969}
   - component: {fileID: 3615854791181736880}
   - component: {fileID: 8337706617249366333}
+  - component: {fileID: 7979515908480373509}
   m_Layer: 0
   m_Name: Medicine Kit
   m_TagString: Untagged
@@ -59,6 +60,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 3615854791181736880}
+--- !u!114 &7979515908480373509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213848511381828640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751badd9939e44ab92f37be8f83527b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfHealth: {fileID: 3615854791181736880}
+  restoreAmount: 10
 --- !u!1 &6843704112274670748
 GameObject:
   m_ObjectHideFlags: 0
