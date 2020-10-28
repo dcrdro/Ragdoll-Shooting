@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7097678277443398267}
   - component: {fileID: 2475224925259818021}
   - component: {fileID: 2724407262357382320}
-  m_Layer: 0
+  - component: {fileID: 4479143947470342980}
+  m_Layer: 18
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,6 +104,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &4479143947470342980
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577536186670886690}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!1 &5326226165138743198
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 990393401210411703}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Shield Instance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
