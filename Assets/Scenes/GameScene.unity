@@ -180,6 +180,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1317740055909943703, guid: 21d0db5eec87bfe489c283b240dd7c13,
+        type: 3}
+      propertyPath: gameOverManager
+      value: 
+      objectReference: {fileID: 7750598890642653893}
     - target: {fileID: 4190371483485158709, guid: 21d0db5eec87bfe489c283b240dd7c13,
         type: 3}
       propertyPath: health
@@ -265,6 +270,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7201364868247185812, guid: 21d0db5eec87bfe489c283b240dd7c13,
+        type: 3}
+      propertyPath: gameOverManager
+      value: 
+      objectReference: {fileID: 7750598890642653893}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21d0db5eec87bfe489c283b240dd7c13, type: 3}
 --- !u!1001 &4900033345594362879

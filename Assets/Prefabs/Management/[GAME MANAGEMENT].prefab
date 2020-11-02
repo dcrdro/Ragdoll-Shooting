@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 5532337171102286144}
   - component: {fileID: 6852315565482866970}
   - component: {fileID: 6609839916682982292}
+  - component: {fileID: 9090270551637214197}
   m_Layer: 8
   m_Name: Bonuses Spawner
   m_TagString: Untagged
@@ -140,3 +141,17 @@ MonoBehaviour:
   - {fileID: 2310308077454553661, guid: 223ddc52363723a4c80a200c9401b54c, type: 3}
   - {fileID: 213848511381828640, guid: bc7fee103bc7c764c8d8de89a629ea72, type: 3}
   - {fileID: 2619786396543917975, guid: 4bdae2934c927cc49b4618943f9f415b, type: 3}
+--- !u!114 &9090270551637214197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7460688613976385778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9294fd3bc14bd2a2798b3927107116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverManager: {fileID: 4862095740428238225}
+  spawner: {fileID: 6852315565482866970}
