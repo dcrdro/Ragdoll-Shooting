@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class DamageDoneDestroyer : MonoBehaviour
+public class DamagerDoneDestroyer : MonoBehaviour
 {
     [SerializeField] private MonoBehaviour damager; // IDamager
 

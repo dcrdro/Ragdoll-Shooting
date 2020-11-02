@@ -26,8 +26,6 @@ public class ExplosionCollidable : MonoBehaviour, ICollidable, IRootReference
 
         SwitchRagdoll(receivers);
         ApplyHit(receivers);
-
-        Destroy(RootObject);
     }
 
     private static void SwitchRagdoll(IEnumerable<HitReceiver> receivers)
@@ -39,7 +37,7 @@ public class ExplosionCollidable : MonoBehaviour, ICollidable, IRootReference
             {
                 if (root.RootObject.TryGetComponent<PhysicsSwitcher>(out var switcher))
                 {
-                    switcher.Switch();
+                    switcher.Switch(); // may be bottleneck
                 }
             }
         }
