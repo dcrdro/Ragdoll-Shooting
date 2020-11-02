@@ -170,6 +170,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 548859371182717517, guid: 21d0db5eec87bfe489c283b240dd7c13,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 548859371182717517, guid: 21d0db5eec87bfe489c283b240dd7c13,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 548859371182717517, guid: 21d0db5eec87bfe489c283b240dd7c13,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 649780620535823955, guid: 21d0db5eec87bfe489c283b240dd7c13,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -185,6 +200,21 @@ PrefabInstance:
       propertyPath: gameOverManager
       value: 
       objectReference: {fileID: 7750598890642653893}
+    - target: {fileID: 2509404182060468714, guid: 21d0db5eec87bfe489c283b240dd7c13,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2509404182060468714, guid: 21d0db5eec87bfe489c283b240dd7c13,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2509404182060468714, guid: 21d0db5eec87bfe489c283b240dd7c13,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4190371483485158709, guid: 21d0db5eec87bfe489c283b240dd7c13,
         type: 3}
       propertyPath: health
@@ -195,6 +225,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6076120280196709688, guid: 21d0db5eec87bfe489c283b240dd7c13,
+        type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1045033798}
     - target: {fileID: 6507280877467171699, guid: 21d0db5eec87bfe489c283b240dd7c13,
         type: 3}
       propertyPath: m_LocalPosition.x
