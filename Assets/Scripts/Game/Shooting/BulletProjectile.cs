@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class BulletProjectile : MonoBehaviour, IDamager, IOriginDerived
 {
     [SerializeField] private Rigidbody2D bulletRigidbody;
     [SerializeField] private float damage;
+    
+    public event Action<IDamagable> OnDamaged;
     
     public GameObject Origin { get; set; }
 
@@ -15,5 +18,6 @@ public class BulletProjectile : MonoBehaviour, IDamager, IOriginDerived
     public void Damage(IDamagable damagable)
     {
         damagable.TakeDamage(new DamageArgs(Origin, gameObject, damage));
+        OnDamaged?.Invoke(damagable);
     }
 }
