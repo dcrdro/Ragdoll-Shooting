@@ -9,9 +9,10 @@ public class ExplosionCollidable : MonoBehaviour, ICollidable, IRootReference
     [SerializeField] private LayerMask explosionLayer;
     [SerializeField] private Transform explosionPoint;
     [SerializeField] private float explosionRadius; // move some field out of this class ?
-    [SerializeField] private float damage;
     [SerializeField] private Vector2 explosionVelocity;
     [SerializeField] private GameObject rootObject;
+
+    [SerializeField] private ExplosionDamager explosionDamager;
 
     public GameObject RootObject => rootObject;
 
@@ -46,11 +47,20 @@ public class ExplosionCollidable : MonoBehaviour, ICollidable, IRootReference
 
     private void ApplyHit(IEnumerable<HitReceiver> receivers)
     {
+        ApplyDamage(receivers);
+        ApplyForce(receivers);
+    }
+
+    private void ApplyDamage(IEnumerable<HitReceiver> receivers)
+    {
+        explosionDamager.Init(null, RootObject);
+        explosionDamager.Damage(receivers);
+    }
+
+    private void ApplyForce(IEnumerable<HitReceiver> receivers)
+    {
         foreach (var receiver in receivers)
         {
-            // split
-            DamageArgs damageArgs = new DamageArgs(null, RootObject, damage);
-            receiver.TakeDamage(damageArgs); // replace to IDamager ?
             Vector3 distance = receiver.transform.position - explosionPoint.position;
             float powerMultiplier = Mathf.InverseLerp(explosionRadius, minExplosionRadius, distance.magnitude); // make via curve ?
             Vector3 force = distance.normalized * powerMultiplier * explosionVelocity;
