@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumper: {fileID: 5033991540749184984}
   weaponer: {fileID: 6028224315131730583}
+  jumpIntervalRange: {x: 2, y: 4}
+  doubleJumpChance: 0.743
+  shootIntervalRange: {x: 0.5, y: 1.5}
 --- !u!1001 &9043797141665859805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50,7 +53,7 @@ PrefabInstance:
         type: 3}
       propertyPath: unitController
       value: 
-      objectReference: {fileID: 6066607136341974670}
+      objectReference: {fileID: 0}
     - target: {fileID: 7167919057652719224, guid: 7a68f9796ace9db4b827ae2ee2267671,
         type: 3}
       propertyPath: m_LocalPosition.x
