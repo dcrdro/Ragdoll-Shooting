@@ -121,6 +121,30 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &47473314 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3409563696290455746, guid: bafd274955b480648a9bd8c11bbc6abd,
+    type: 3}
+  m_PrefabInstance: {fileID: 4900033345594362879}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da78247a2d0686642a425087504c64a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &47473315 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4117959856954299789, guid: bafd274955b480648a9bd8c11bbc6abd,
+    type: 3}
+  m_PrefabInstance: {fileID: 4900033345594362879}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a31dcf3a4077647924231a3d662f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!108 &705507994 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 4900033346231712101, guid: bafd274955b480648a9bd8c11bbc6abd,
@@ -225,6 +249,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5624739484809784121, guid: 21d0db5eec87bfe489c283b240dd7c13,
+        type: 3}
+      propertyPath: jumper
+      value: 
+      objectReference: {fileID: 47473315}
     - target: {fileID: 6076120280196709688, guid: 21d0db5eec87bfe489c283b240dd7c13,
         type: 3}
       propertyPath: health
@@ -310,6 +339,11 @@ PrefabInstance:
       propertyPath: gameOverManager
       value: 
       objectReference: {fileID: 7750598890642653893}
+    - target: {fileID: 7535562530442906030, guid: 21d0db5eec87bfe489c283b240dd7c13,
+        type: 3}
+      propertyPath: weaponer
+      value: 
+      objectReference: {fileID: 47473314}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21d0db5eec87bfe489c283b240dd7c13, type: 3}
 --- !u!1001 &4900033345594362879
