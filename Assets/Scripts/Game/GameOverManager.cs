@@ -8,6 +8,8 @@ public class GameOverManager : MonoBehaviour
 
     public bool IsGameOver { get; private set; }
     
+    public FighterID WinnerID { get; private set; }
+    
     public event Action OnGameOver;
     
     private void OnEnable()
@@ -42,6 +44,7 @@ public class GameOverManager : MonoBehaviour
         fighterTwoHealth.OnDied -= OnTwoDied;
 
         IsGameOver = true;
+        WinnerID = winnerID;
         OnGameOver?.Invoke();
     }    
 }
