@@ -23,7 +23,7 @@ public class ExplosionDamager : MonoBehaviour, IMultiTargetDamager
         foreach (var damagable in damagables)
         {
             damagable.TakeDamage(damageArgs);
-            OnDamaged?.Invoke(damagables);
         }
+        OnDamaged?.Invoke(damagables);
     }
 }
