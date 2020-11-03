@@ -1,11 +1,15 @@
-﻿using UnityEngine;
+﻿using Game.Management;
+using UnityEngine;
 
-public abstract class GameOverDisabler : MonoBehaviour
+namespace Game.Fighting.Handlers
 {
-    [SerializeField] private GameOverManager gameOverManager;
+    public abstract class GameOverDisabler : MonoBehaviour
+    {
+        [SerializeField] private GameOverManager gameOverManager;
 
-    private void OnEnable() => gameOverManager.DidGameOver += OnGameOver;
-    private void OnDisable() => gameOverManager.DidGameOver -= OnGameOver;
+        private void OnEnable() => gameOverManager.DidGameOver += OnGameOver;
+        private void OnDisable() => gameOverManager.DidGameOver -= OnGameOver;
 
-    protected abstract void OnGameOver();
+        protected abstract void OnGameOver();
+    }
 }

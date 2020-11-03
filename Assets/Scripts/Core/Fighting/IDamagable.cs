@@ -1,8 +1,12 @@
 ﻿using System;
+using Core.Fighting.Args;
 
-public interface IDamagable
+namespace Core.Fighting
 {
-    event Action<IDamagable, DamageArgs> DamageTaken;
+    public interface IDamagable
+    {
+        event Action<IDamagable, DamageArgs> DamageTaken;
     
-    void TakeDamage(DamageArgs damageArgs);
+        void TakeDamage(DamageArgs damageArgs);
+    }
 }

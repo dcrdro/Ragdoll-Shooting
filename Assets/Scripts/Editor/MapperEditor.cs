@@ -1,64 +1,68 @@
-﻿using UnityEditor;
+﻿using Core.Scriptable;
+using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(ScriptableMapperBase<,>), true)]
-public class MapperEditor : Editor
+namespace Editor
 {
-    private const int labelWidth = 100;
-    
-    private SerializedProperty keys;
-    private SerializedProperty values;
-
-    private int mapSize;
-
-    private GUIStyle headerStyle;
-    
-    void OnEnable()
+    [CustomEditor(typeof(ScriptableMapperBase<,>), true)]
+    public class MapperEditor : UnityEditor.Editor
     {
-        keys = serializedObject.FindProperty("mapperKeys");
-        values = serializedObject.FindProperty("mapperValues");
-        mapSize = keys.arraySize;
-        
-        headerStyle = new GUIStyle();
-        headerStyle.fontSize = 18;
-        headerStyle.fontStyle = FontStyle.Bold;
-        headerStyle.alignment = TextAnchor.MiddleCenter;
-    }
+        private const int labelWidth = 100;
     
-    public override void OnInspectorGUI()
-    {
-        serializedObject.Update();
+        private SerializedProperty keys;
+        private SerializedProperty values;
 
-        EditorGUILayout.LabelField("Mapper", headerStyle);
-        EditorGUILayout.Space(20);
+        private int mapSize;
 
-        EditorGUILayout.BeginHorizontal(); 
+        private GUIStyle headerStyle;
+    
+        void OnEnable()
         {
-            mapSize = EditorGUILayout.IntField("Size", mapSize);
-            if (GUILayout.Button("+")) mapSize++;
-            if (GUILayout.Button("-")) mapSize--;
+            keys = serializedObject.FindProperty("mapperKeys");
+            values = serializedObject.FindProperty("mapperValues");
+            mapSize = keys.arraySize;
+        
+            headerStyle = new GUIStyle();
+            headerStyle.fontSize = 18;
+            headerStyle.fontStyle = FontStyle.Bold;
+            headerStyle.alignment = TextAnchor.MiddleCenter;
         }
-        EditorGUILayout.EndHorizontal();
-        
-        mapSize = Mathf.Clamp(mapSize, 0, 100);
-        keys.arraySize = mapSize;
-        values.arraySize = mapSize;
-
-        float savedLabelWidth = EditorGUIUtility.labelWidth;
-        EditorGUIUtility.labelWidth = labelWidth;
-        EditorGUI.indentLevel++;
-        for (int i = 0; i < mapSize; i++)
+    
+        public override void OnInspectorGUI()
         {
-            EditorGUILayout.BeginHorizontal();
+            serializedObject.Update();
+
+            EditorGUILayout.LabelField("Mapper", headerStyle);
+            EditorGUILayout.Space(20);
+
+            EditorGUILayout.BeginHorizontal(); 
             {
-                EditorGUILayout.PropertyField(keys.GetArrayElementAtIndex(i), new GUIContent("Key"));
-                EditorGUILayout.PropertyField(values.GetArrayElementAtIndex(i), new GUIContent("Value"));
+                mapSize = EditorGUILayout.IntField("Size", mapSize);
+                if (GUILayout.Button("+")) mapSize++;
+                if (GUILayout.Button("-")) mapSize--;
             }
             EditorGUILayout.EndHorizontal();
-        }
-        EditorGUI.indentLevel--;
-        EditorGUIUtility.labelWidth = savedLabelWidth;
+        
+            mapSize = Mathf.Clamp(mapSize, 0, 100);
+            keys.arraySize = mapSize;
+            values.arraySize = mapSize;
 
-        serializedObject.ApplyModifiedProperties();
+            float savedLabelWidth = EditorGUIUtility.labelWidth;
+            EditorGUIUtility.labelWidth = labelWidth;
+            EditorGUI.indentLevel++;
+            for (int i = 0; i < mapSize; i++)
+            {
+                EditorGUILayout.BeginHorizontal();
+                {
+                    EditorGUILayout.PropertyField(keys.GetArrayElementAtIndex(i), new GUIContent("Key"));
+                    EditorGUILayout.PropertyField(values.GetArrayElementAtIndex(i), new GUIContent("Value"));
+                }
+                EditorGUILayout.EndHorizontal();
+            }
+            EditorGUI.indentLevel--;
+            EditorGUIUtility.labelWidth = savedLabelWidth;
+
+            serializedObject.ApplyModifiedProperties();
+        }
     }
 }

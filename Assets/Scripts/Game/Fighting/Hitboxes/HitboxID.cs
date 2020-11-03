@@ -1,7 +1,10 @@
-﻿public enum HitboxID
+﻿namespace Game.Fighting.Hitboxes
 {
-    None = 0,
-    Head,
-    Body,
-    Legs
+    public enum HitboxID
+    {
+        None = 0,
+        Head,
+        Body,
+        Legs
+    }
 }

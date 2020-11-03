@@ -1,50 +1,56 @@
 ﻿using System;
+using Core.Fighting.Args;
+using Game.Fighting.Health;
+using Game.Player;
 using UnityEngine;
 
-public class GameOverManager : MonoBehaviour
+namespace Game.Management
 {
-    [SerializeField] private Health fighterOneHealth;
-    [SerializeField] private Health fighterTwoHealth;
+    public class GameOverManager : MonoBehaviour
+    {
+        [SerializeField] private Health fighterOneHealth;
+        [SerializeField] private Health fighterTwoHealth;
 
-    public bool IsGameOver { get; private set; }
+        public bool IsGameOver { get; private set; }
     
-    public FighterID WinnerID { get; private set; }
+        public FighterID WinnerID { get; private set; }
     
-    public event Action DidGameOver;
+        public event Action DidGameOver;
     
-    private void OnEnable()
-    {
-        fighterOneHealth.Died += OnOneDied;
-        fighterTwoHealth.Died += OnTwoDied;
-    }
+        private void OnEnable()
+        {
+            fighterOneHealth.Died += OnOneDied;
+            fighterTwoHealth.Died += OnTwoDied;
+        }
 
-    private void OnDisable()
-    {
-        fighterOneHealth.Died -= OnOneDied;
-        fighterTwoHealth.Died -= OnTwoDied;
-    }
+        private void OnDisable()
+        {
+            fighterOneHealth.Died -= OnOneDied;
+            fighterTwoHealth.Died -= OnTwoDied;
+        }
 
-    private void OnOneDied(DeathArgs obj)
-    {
-        FighterID winnerID = fighterTwoHealth.GetComponent<FighterIdentifier>().FighterID;
-        SetGameOver(winnerID);
-    }
+        private void OnOneDied(DeathArgs obj)
+        {
+            FighterID winnerID = fighterTwoHealth.GetComponent<FighterIdentifier>().FighterID;
+            SetGameOver(winnerID);
+        }
     
-    private void OnTwoDied(DeathArgs obj)
-    {
-        FighterID winnerID = fighterOneHealth.GetComponent<FighterIdentifier>().FighterID;
-        SetGameOver(winnerID);
-    }
+        private void OnTwoDied(DeathArgs obj)
+        {
+            FighterID winnerID = fighterOneHealth.GetComponent<FighterIdentifier>().FighterID;
+            SetGameOver(winnerID);
+        }
 
-    private void SetGameOver(FighterID winnerID)
-    {
-        print("winner: " + winnerID);
+        private void SetGameOver(FighterID winnerID)
+        {
+            print("winner: " + winnerID);
         
-        fighterOneHealth.Died -= OnOneDied;
-        fighterTwoHealth.Died -= OnTwoDied;
+            fighterOneHealth.Died -= OnOneDied;
+            fighterTwoHealth.Died -= OnTwoDied;
 
-        IsGameOver = true;
-        WinnerID = winnerID;
-        DidGameOver?.Invoke();
-    }    
+            IsGameOver = true;
+            WinnerID = winnerID;
+            DidGameOver?.Invoke();
+        }    
+    }
 }

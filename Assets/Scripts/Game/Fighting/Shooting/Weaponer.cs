@@ -1,23 +1,27 @@
 ﻿using System;
+using Core.General;
 using UnityEngine;
 
-public class Weaponer : MonoBehaviour, IOriginDerived
+namespace Game.Fighting.Shooting
 {
-    [SerializeField] private WeaponBase weapon;
+    public class Weaponer : MonoBehaviour, IOriginDerived
+    {
+        [SerializeField] private WeaponBase weapon;
 
-    public GameObject Origin { get; set; }
+        public GameObject Origin { get; set; }
     
-    public event Action WeaponApplied;
+        public event Action WeaponApplied;
 
-    private void Start()
-    {
-        weapon.Origin = Origin;
-    }
+        private void Start()
+        {
+            weapon.Origin = Origin;
+        }
 
-    [ContextMenu("ApplyWeapon test")]
-    public void ApplyWeapon()
-    {
-        weapon.Shoot();
-        WeaponApplied?.Invoke();
+        [ContextMenu("ApplyWeapon test")]
+        public void ApplyWeapon()
+        {
+            weapon.Shoot();
+            WeaponApplied?.Invoke();
+        }
     }
 }

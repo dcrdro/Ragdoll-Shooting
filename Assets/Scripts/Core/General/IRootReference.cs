@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-public interface IRootReference
+namespace Core.General
 {
-    GameObject RootObject { get; }
+    public interface IRootReference
+    {
+        GameObject RootObject { get; }
+    }
 }

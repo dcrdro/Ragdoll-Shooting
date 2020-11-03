@@ -1,19 +1,24 @@
-﻿using UnityEngine;
+﻿using Core.Fighting;
+using Core.Interacting;
+using UnityEngine;
 
-public class DamagerTriggerable : MonoBehaviour, ITriggerable
+namespace Game.Fighting.Damagers
 {
-    [SerializeField] private MonoBehaviour damager; // rework
-    [SerializeField] private LayerMask damageMask;
-    
-    private IDamager Damager => (IDamager) damager;
-
-    public LayerMask TriggerableLayer => damageMask;
-
-    public void OnTrigger(Collider2D collider)
+    public class DamagerTriggerable : MonoBehaviour, ITriggerable
     {
-        if (collider.TryGetComponent<IDamagable>(out var damagable))
+        [SerializeField] private MonoBehaviour damager; // rework
+        [SerializeField] private LayerMask damageMask;
+    
+        private IDamager Damager => (IDamager) damager;
+
+        public LayerMask TriggerableLayer => damageMask;
+
+        public void OnTrigger(Collider2D collider)
         {
-            Damager.Damage(damagable);
+            if (collider.TryGetComponent<IDamagable>(out var damagable))
+            {
+                Damager.Damage(damagable);
+            }
         }
     }
 }

@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 
-public abstract class EffectorBase : MonoBehaviour
+namespace Core.Effects
 {
-    public EffectBase[] effects;
-
-    protected void PlayEffects()
+    public abstract class EffectorBase : MonoBehaviour
     {
-        foreach (var effect in effects)
+        public EffectBase[] effects;
+
+        protected void PlayEffects()
         {
-            effect.Play();
+            foreach (var effect in effects)
+            {
+                effect.Play();
+            }
         }
     }
 }

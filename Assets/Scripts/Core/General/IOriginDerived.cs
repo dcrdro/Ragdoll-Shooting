@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-public interface IOriginDerived
+namespace Core.General
 {
-    GameObject Origin { get; set; }   
+    public interface IOriginDerived
+    {
+        GameObject Origin { get; set; }   
+    }
 }

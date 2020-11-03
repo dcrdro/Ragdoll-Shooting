@@ -1,8 +1,12 @@
-﻿using UnityEngine;
+﻿using Core.General;
+using UnityEngine;
 
-public class BonusAttachmentHolder : MonoBehaviour, IAttachmentHolder
+namespace Game.General
 {
-    [SerializeField] private Transform bonusHolder;
+    public class BonusAttachmentHolder : MonoBehaviour, IAttachmentHolder
+    {
+        [SerializeField] private Transform bonusHolder;
 
-    public Transform Holder => bonusHolder;
+        public Transform Holder => bonusHolder;
+    }
 }

@@ -1,17 +1,22 @@
 ﻿using System;
+using Core.Fighting;
+using Core.Fighting.Args;
 using UnityEngine;
 
-public class HitReceiver : MonoBehaviour, IDamagable, IForceable
+namespace Game.Fighting.Hitboxes
 {
-    [SerializeField] private HitboxID hitboxID;
+    public class HitReceiver : MonoBehaviour, IDamagable, IForceable
+    {
+        [SerializeField] private HitboxID hitboxID;
 
-    public HitboxID HitboxID => hitboxID;
+        public HitboxID HitboxID => hitboxID;
 
-    public event Action<IDamagable, DamageArgs> DamageTaken;
-    public event Action<IForceable, Vector3> ForceApplied;
+        public event Action<IDamagable, DamageArgs> DamageTaken;
+        public event Action<IForceable, Vector3> ForceApplied;
 
-    public void TakeDamage(DamageArgs args) => DamageTaken?.Invoke(this, args);
+        public void TakeDamage(DamageArgs args) => DamageTaken?.Invoke(this, args);
 
-    public void ApplyForce(Vector3 force) => ForceApplied?.Invoke(this, force);
-    public void Stop() { }
+        public void ApplyForce(Vector3 force) => ForceApplied?.Invoke(this, force);
+        public void Stop() { }
+    }
 }

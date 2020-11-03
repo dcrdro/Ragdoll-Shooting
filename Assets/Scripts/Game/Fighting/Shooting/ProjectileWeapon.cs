@@ -1,18 +1,23 @@
-﻿using UnityEngine;
+﻿using Core.Fighting;
+using Core.General;
+using UnityEngine;
 
-public class ProjectileWeapon : WeaponBase
+namespace Game.Fighting.Shooting
 {
-    [SerializeField] private MonoBehaviour projectile; // as IProjectile
-    [SerializeField] private Transform shootPoint;
-    [SerializeField] private float projectileSpeed;
-
-    public override void Shoot()
+    public class ProjectileWeapon : WeaponBase
     {
-        MonoBehaviour instance = Instantiate(projectile, shootPoint.position, Quaternion.identity);
-        foreach (var derived in instance.GetComponentsInChildren<IOriginDerived>())
+        [SerializeField] private MonoBehaviour projectile; // as IProjectile
+        [SerializeField] private Transform shootPoint;
+        [SerializeField] private float projectileSpeed;
+
+        public override void Shoot()
         {
-            derived.Origin = Origin;
+            MonoBehaviour instance = Instantiate(projectile, shootPoint.position, Quaternion.identity);
+            foreach (var derived in instance.GetComponentsInChildren<IOriginDerived>())
+            {
+                derived.Origin = Origin;
+            }
+            ((IProjectile) instance).Launch(shootPoint.right * projectileSpeed);
         }
-        ((IProjectile) instance).Launch(shootPoint.right * projectileSpeed);
     }
 }

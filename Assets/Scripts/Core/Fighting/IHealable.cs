@@ -1,8 +1,12 @@
 ﻿using System;
+using Core.Fighting.Args;
 
-public interface IHealable
+namespace Core.Fighting
 {
-    event Action<IHealable, HealArgs> HealTaken;
+    public interface IHealable
+    {
+        event Action<IHealable, HealArgs> HealTaken;
     
-    void TakeHeal(HealArgs healArgs);
+        void TakeHeal(HealArgs healArgs);
+    }
 }

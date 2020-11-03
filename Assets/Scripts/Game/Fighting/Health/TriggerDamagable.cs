@@ -1,17 +1,22 @@
 ﻿using System;
+using Core.Fighting;
+using Core.Fighting.Args;
 using UnityEngine;
 
-public class TriggerDamagable : MonoBehaviour, IDamagable
+namespace Game.Fighting.Health
 {
-    [SerializeField] private MonoBehaviour damagable; // rework
-
-    private IDamagable Damagable => (IDamagable) damagable;
-
-    public event Action<IDamagable, DamageArgs> DamageTaken
+    public class TriggerDamagable : MonoBehaviour, IDamagable
     {
-        add => Damagable.DamageTaken += value;
-        remove => Damagable.DamageTaken -= value;
-    }
+        [SerializeField] private MonoBehaviour damagable; // rework
 
-    public void TakeDamage(DamageArgs args) => Damagable.TakeDamage(args);
+        private IDamagable Damagable => (IDamagable) damagable;
+
+        public event Action<IDamagable, DamageArgs> DamageTaken
+        {
+            add => Damagable.DamageTaken += value;
+            remove => Damagable.DamageTaken -= value;
+        }
+
+        public void TakeDamage(DamageArgs args) => Damagable.TakeDamage(args);
+    }
 }

@@ -1,10 +1,14 @@
-﻿using UnityEngine;
+﻿using Core.General;
+using UnityEngine;
 
-public class BonusesFactory : MonoBehaviour, IFactory<int, GameObject>
+namespace Game.Management
 {
-    [SerializeField] private GameObject[] bonusesPrefabs;
+    public class BonusesFactory : MonoBehaviour, IFactory<int, GameObject>
+    {
+        [SerializeField] private GameObject[] bonusesPrefabs;
     
-    public GameObject Produce(int id) => Instantiate(bonusesPrefabs[id]);
+        public GameObject Produce(int id) => Instantiate(bonusesPrefabs[id]);
     
-    public int Size => bonusesPrefabs.Length;
+        public int Size => bonusesPrefabs.Length;
+    }
 }

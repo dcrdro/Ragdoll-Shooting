@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 
-public struct DeathArgs
+namespace Core.Fighting.Args
 {
-    public GameObject Origin { get; } 
-    public GameObject Dealer { get; }
-
-    public DeathArgs(GameObject origin, GameObject dealer)
+    public struct DeathArgs
     {
-        Origin = origin;
-        Dealer = dealer;
+        public GameObject Origin { get; } 
+        public GameObject Dealer { get; }
+
+        public DeathArgs(GameObject origin, GameObject dealer)
+        {
+            Origin = origin;
+            Dealer = dealer;
+        }
     }
 }

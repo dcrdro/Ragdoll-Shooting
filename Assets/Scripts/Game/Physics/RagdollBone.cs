@@ -1,30 +1,34 @@
 ﻿using System;
+using Core.Fighting;
 using UnityEngine;
 
-public class RagdollBone : MonoBehaviour, IForceable
+namespace Game.Physics
 {
-    [SerializeField] private Rigidbody2D boneRigidbody;
-    [SerializeField] private HingeJoint2D boneJoint;
-
-    public event Action<IForceable, Vector3> ForceApplied;
-
-    public void Activate()
+    public class RagdollBone : MonoBehaviour, IForceable
     {
-        boneRigidbody.isKinematic = false;
-        if (boneJoint) boneJoint.enabled = true;
-    }
+        [SerializeField] private Rigidbody2D boneRigidbody;
+        [SerializeField] private HingeJoint2D boneJoint;
 
-    public void Deactivate()
-    {
-        boneRigidbody.isKinematic = true;
-        if (boneJoint) boneJoint.enabled = false;
-    }
+        public event Action<IForceable, Vector3> ForceApplied;
 
-    public void ApplyForce(Vector3 force)
-    {
-        boneRigidbody.AddForce(force);
-        ForceApplied?.Invoke(this, force);
-    }
+        public void Activate()
+        {
+            boneRigidbody.isKinematic = false;
+            if (boneJoint) boneJoint.enabled = true;
+        }
 
-    public void Stop() => boneRigidbody.velocity = Vector2.zero;
+        public void Deactivate()
+        {
+            boneRigidbody.isKinematic = true;
+            if (boneJoint) boneJoint.enabled = false;
+        }
+
+        public void ApplyForce(Vector3 force)
+        {
+            boneRigidbody.AddForce(force);
+            ForceApplied?.Invoke(this, force);
+        }
+
+        public void Stop() => boneRigidbody.velocity = Vector2.zero;
+    }
 }

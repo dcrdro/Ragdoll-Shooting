@@ -1,9 +1,12 @@
 ﻿using System;
 
-public interface ITimable
+namespace Core.General
 {
-    float Capacity { get; }
-    float Current { get; }
+    public interface ITimable
+    {
+        float Capacity { get; }
+        float Current { get; }
     
-    event Action Ended;
+        event Action Ended;
+    }
 }

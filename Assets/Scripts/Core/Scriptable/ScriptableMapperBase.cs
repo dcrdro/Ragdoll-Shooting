@@ -1,23 +1,27 @@
 ﻿using System.Collections.Generic;
+using Core.General;
 using UnityEngine;
 
-public abstract class ScriptableMapperBase<K, V> : ScriptableObject, IMapper<K, V>
+namespace Core.Scriptable
 {
-    [SerializeField] private K[] mapperKeys;
-    [SerializeField] private V[] mapperValues;
-
-    void OnValidate()
+    public abstract class ScriptableMapperBase<K, V> : ScriptableObject, IMapper<K, V>
     {
-        map.Clear();
-        for (int i = 0, len = mapperKeys.Length; i < len; i++)
+        [SerializeField] private K[] mapperKeys;
+        [SerializeField] private V[] mapperValues;
+
+        void OnValidate()
         {
-            Map(mapperKeys[i], mapperValues[i]);
+            map.Clear();
+            for (int i = 0, len = mapperKeys.Length; i < len; i++)
+            {
+                Map(mapperKeys[i], mapperValues[i]);
+            }
         }
-    }
     
-    protected Dictionary<K, V> map = new Dictionary<K, V>();
+        protected Dictionary<K, V> map = new Dictionary<K, V>();
 
-    public void Map(K key, V value) => map[key] = value;
+        public void Map(K key, V value) => map[key] = value;
 
-    public V this[K key] => map[key];
+        public V this[K key] => map[key];
+    }
 }

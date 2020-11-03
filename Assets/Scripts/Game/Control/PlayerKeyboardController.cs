@@ -1,24 +1,27 @@
 ﻿using UnityEngine;
 
-public class PlayerKeyboardController : FighterControllerBase
+namespace Game.Control
 {
-    [SerializeField] private KeyCode shootKey;
-    [SerializeField] private KeyCode jumpKey;
-    
-    protected override void Init()
+    public class PlayerKeyboardController : FighterControllerBase
     {
-    }
+        [SerializeField] private KeyCode shootKey;
+        [SerializeField] private KeyCode jumpKey;
 
-    protected override void UpdateControl()
-    {
-        if (Input.GetKeyDown(shootKey))
+        public override void Init()
         {
-            weaponer.ApplyWeapon();
         }
 
-        if (Input.GetKeyDown(jumpKey))
+        public override void UpdateControl()
         {
-            jumper.TryJump();
+            if (Input.GetKeyDown(shootKey))
+            {
+                weaponer.ApplyWeapon();
+            }
+
+            if (Input.GetKeyDown(jumpKey))
+            {
+                jumper.TryJump();
+            }
         }
     }
 }

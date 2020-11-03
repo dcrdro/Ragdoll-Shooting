@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-public interface IAttachmentHolder
+namespace Core.General
 {
-    Transform Holder { get; }    
+    public interface IAttachmentHolder
+    {
+        Transform Holder { get; }    
+    }
 }

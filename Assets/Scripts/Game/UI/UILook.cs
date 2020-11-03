@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 
-public class UILook : MonoBehaviour
+namespace Game.UI
 {
-    private void LateUpdate()
+    public class UILook : MonoBehaviour
     {
-        transform.rotation = Quaternion.identity;
+        private void LateUpdate()
+        {
+            transform.rotation = Quaternion.identity;
+        }
     }
 }

@@ -1,23 +1,27 @@
-﻿using UnityEngine;
+﻿using Core.Fighting;
+using UnityEngine;
 
-public class DamagerDoneDestroyer : MonoBehaviour
+namespace Game.Fighting.Handlers.Destroyers
 {
-    [SerializeField] private MonoBehaviour damager; // IDamager
-
-    private IDamager Damager => (IDamager) damager;
-
-    private void OnEnable()
+    public class DamagerDoneDestroyer : MonoBehaviour
     {
-        Damager.Damaged += OnDamaged;
-    }
+        [SerializeField] private MonoBehaviour damager; // IDamager
 
-    private void OnDisable()
-    {
-        Damager.Damaged -= OnDamaged;
-    }
+        private IDamager Damager => (IDamager) damager;
 
-    private void OnDamaged(IDamagable obj)
-    {
-        Destroy(gameObject);
+        private void OnEnable()
+        {
+            Damager.Damaged += OnDamaged;
+        }
+
+        private void OnDisable()
+        {
+            Damager.Damaged -= OnDamaged;
+        }
+
+        private void OnDamaged(IDamagable obj)
+        {
+            Destroy(gameObject);
+        }
     }
 }

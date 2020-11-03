@@ -1,4 +1,7 @@
-﻿public interface IEffect
+﻿namespace Core.Effects
 {
-    void Play();
+    public interface IEffect
+    {
+        void Play();
+    }
 }

@@ -1,9 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-public interface IForceable
+namespace Core.Fighting
 {
-    event Action<IForceable, Vector3> ForceApplied;
-    void ApplyForce(Vector3 force);
-    void Stop();
+    public interface IForceable
+    {
+        event Action<IForceable, Vector3> ForceApplied;
+        void ApplyForce(Vector3 force);
+        void Stop();
+    }
 }

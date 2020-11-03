@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 
-public struct HealArgs
+namespace Core.Fighting.Args
 {
-    public GameObject Origin { get; } 
-    public GameObject Dealer { get; }
-    public float Heal { get; }
-
-    public HealArgs(GameObject origin, GameObject dealer, float heal)
+    public struct HealArgs
     {
-        Origin = origin;
-        Dealer = dealer;
-        Heal = heal;
+        public GameObject Origin { get; } 
+        public GameObject Dealer { get; }
+        public float Heal { get; }
+
+        public HealArgs(GameObject origin, GameObject dealer, float heal)
+        {
+            Origin = origin;
+            Dealer = dealer;
+            Heal = heal;
+        }
     }
 }

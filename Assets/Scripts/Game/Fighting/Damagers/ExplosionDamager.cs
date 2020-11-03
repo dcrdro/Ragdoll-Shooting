@@ -1,29 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using Core.Fighting;
+using Core.Fighting.Args;
 using UnityEngine;
 
-public class ExplosionDamager : MonoBehaviour, IMultiTargetDamager
+namespace Game.Fighting.Damagers
 {
-    [SerializeField] private float damage;
-
-    private GameObject explosionOrigin;
-    private GameObject explosionSource;
-    
-    public event Action<IEnumerable<IDamagable>> Damaged;
-
-    public void Init(GameObject origin, GameObject source)
+    public class ExplosionDamager : MonoBehaviour, IMultiTargetDamager
     {
-        explosionOrigin = origin;
-        explosionSource = source;
-    }
+        [SerializeField] private float damage;
+
+        private GameObject explosionOrigin;
+        private GameObject explosionSource;
     
-    public void Damage(IEnumerable<IDamagable> damagables)
-    {
-        DamageArgs damageArgs = new DamageArgs(explosionOrigin, explosionSource, damage);
-        foreach (var damagable in damagables)
+        public event Action<IEnumerable<IDamagable>> Damaged;
+
+        public void Init(GameObject origin, GameObject source)
         {
-            damagable.TakeDamage(damageArgs);
+            explosionOrigin = origin;
+            explosionSource = source;
         }
-        Damaged?.Invoke(damagables);
+    
+        public void Damage(IEnumerable<IDamagable> damagables)
+        {
+            DamageArgs damageArgs = new DamageArgs(explosionOrigin, explosionSource, damage);
+            foreach (var damagable in damagables)
+            {
+                damagable.TakeDamage(damageArgs);
+            }
+            Damaged?.Invoke(damagables);
+        }
     }
 }

@@ -1,9 +1,14 @@
-﻿using UnityEngine;
+﻿using Core.UI;
+using Game.Management;
+using UnityEngine;
 
-public class PauseButtonUI : UIBase
+namespace Game.UI
 {
-    [SerializeField] private AppManager appManager;
+    public class PauseButtonUI : UIBase
+    {
+        [SerializeField] private AppManager appManager;
     
-    // UI Event
-    public void OnPause() => appManager.PauseGame();
+        // UI Event
+        public void OnPause() => appManager.PauseGame();
+    }
 }

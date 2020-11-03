@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
-public class UIBase : MonoBehaviour
+namespace Core.UI
 {
+    public class UIBase : MonoBehaviour
+    {
+    }
 }

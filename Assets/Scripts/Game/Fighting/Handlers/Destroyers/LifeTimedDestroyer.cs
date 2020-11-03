@@ -1,11 +1,15 @@
-﻿using UnityEngine;
+﻿using Game.General;
+using UnityEngine;
 
-public class LifeTimedDestroyer : MonoBehaviour
+namespace Game.Fighting.Handlers.Destroyers
 {
-    [SerializeField] private LifeTimer lifeTimer;
+    public class LifeTimedDestroyer : MonoBehaviour
+    {
+        [SerializeField] private LifeTimer lifeTimer;
 
-    void OnEnable() => lifeTimer.Ended += OnTimeEnded;
-    void OnDisable() => lifeTimer.Ended -= OnTimeEnded;
+        void OnEnable() => lifeTimer.Ended += OnTimeEnded;
+        void OnDisable() => lifeTimer.Ended -= OnTimeEnded;
 
-    private void OnTimeEnded() => Destroy(gameObject);
+        private void OnTimeEnded() => Destroy(gameObject);
+    }
 }

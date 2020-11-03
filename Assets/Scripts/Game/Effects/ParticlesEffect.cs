@@ -1,8 +1,12 @@
-﻿using UnityEngine;
+﻿using Core.Effects;
+using UnityEngine;
 
-public class ParticlesEffect : EffectBase
+namespace Game.Effects
 {
-    [SerializeField] private ParticleSystem particleSystem;
+    public class ParticlesEffect : EffectBase
+    {
+        [SerializeField] private ParticleSystem particleSystem;
     
-    public override void Play() => particleSystem.Play();
+        public override void Play() => particleSystem.Play();
+    }
 }

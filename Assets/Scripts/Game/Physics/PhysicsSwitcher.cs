@@ -1,45 +1,48 @@
 ﻿using UnityEngine;
 
-public enum PhysicsState
+namespace Game.Physics
 {
-    None = 0,
-    Ragdoll,
-    Solid
-}
-
-public class PhysicsSwitcher : MonoBehaviour
-{
-    [SerializeField] private RagdollBody ragdollBody;
-    [SerializeField] private SolidBody solidBody;
-
-    [field:SerializeField]
-    public PhysicsState CurrentPhysicsState { get; private set; }
-
-    void Start()
+    public enum PhysicsState
     {
-        UpdatePhysicsState();
-    }
-    
-    public void Switch(PhysicsState state)
-    {
-        if (CurrentPhysicsState == state) return;
-        
-        CurrentPhysicsState = state;
-        UpdatePhysicsState(); 
+        None = 0,
+        Ragdoll,
+        Solid
     }
 
-    private void UpdatePhysicsState()
+    public class PhysicsSwitcher : MonoBehaviour
     {
-        switch (CurrentPhysicsState)
+        [SerializeField] private RagdollBody ragdollBody;
+        [SerializeField] private SolidBody solidBody;
+
+        [field:SerializeField]
+        public PhysicsState CurrentPhysicsState { get; private set; }
+
+        void Start()
         {
-            case PhysicsState.Ragdoll:
-                solidBody.Deactivate();
-                ragdollBody.Activate();
-                break;
-            case PhysicsState.Solid:
-                ragdollBody.Deactivate();
-                solidBody.Activate();
-                break;
+            UpdatePhysicsState();
+        }
+    
+        public void Switch(PhysicsState state)
+        {
+            if (CurrentPhysicsState == state) return;
+        
+            CurrentPhysicsState = state;
+            UpdatePhysicsState(); 
+        }
+
+        private void UpdatePhysicsState()
+        {
+            switch (CurrentPhysicsState)
+            {
+                case PhysicsState.Ragdoll:
+                    solidBody.Deactivate();
+                    ragdollBody.Activate();
+                    break;
+                case PhysicsState.Solid:
+                    ragdollBody.Deactivate();
+                    solidBody.Activate();
+                    break;
+            }
         }
     }
 }

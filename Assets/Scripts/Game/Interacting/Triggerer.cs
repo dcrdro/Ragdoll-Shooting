@@ -1,26 +1,30 @@
-﻿using UnityEngine;
+﻿using Core.Interacting;
+using UnityEngine;
 
-public class Triggerer : MonoBehaviour
+namespace Game.Interacting
 {
-    [SerializeField] private TriggerSender2D trigger;
-    [SerializeField] private MonoBehaviour triggerable; // as ITriggerable
-
-    private ITriggerable Triggerable => (ITriggerable) triggerable;
-
-    void OnEnable()
+    public class Triggerer : MonoBehaviour
     {
-        trigger.OnEnter += OnEnter;
-    }
+        [SerializeField] private TriggerSender2D trigger;
+        [SerializeField] private MonoBehaviour triggerable; // as ITriggerable
 
-    void OnDisable()
-    {
-        trigger.OnEnter -= OnEnter;
-    }
+        private ITriggerable Triggerable => (ITriggerable) triggerable;
 
-    private void OnEnter(Collider2D collider)
-    {
-        if ((Triggerable.TriggerableLayer & 1 << collider.gameObject.layer) > 0)
+        void OnEnable()
+        {
+            trigger.OnEnter += OnEnter;
+        }
 
-            Triggerable.OnTrigger(collider);
+        void OnDisable()
+        {
+            trigger.OnEnter -= OnEnter;
+        }
+
+        private void OnEnter(Collider2D collider)
+        {
+            if ((Triggerable.TriggerableLayer & 1 << collider.gameObject.layer) > 0)
+
+                Triggerable.OnTrigger(collider);
+        }
     }
 }

@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 
-public class FighterIdentifier : MonoBehaviour
+namespace Game.Player
 {
-    [SerializeField] private FighterID fighterID;
+    public class FighterIdentifier : MonoBehaviour
+    {
+        [SerializeField] private FighterID fighterID;
 
-    public FighterID FighterID => fighterID;
+        public FighterID FighterID => fighterID;
+    }
 }

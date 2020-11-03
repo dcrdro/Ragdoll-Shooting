@@ -1,4 +1,7 @@
-﻿public interface IMapper<K, V>
+﻿namespace Core.General
 {
-    void Map(K key, V value);
+    public interface IMapper<K, V>
+    {
+        void Map(K key, V value);
+    }
 }

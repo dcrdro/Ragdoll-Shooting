@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 
-public class DelayedDestroyer : MonoBehaviour
+namespace Game.Fighting.Handlers.Destroyers
 {
-    [SerializeField] private float delay;
-
-    private void Start()
+    public class DelayedDestroyer : MonoBehaviour
     {
-        Destroy(gameObject, delay);
+        [SerializeField] private float delay;
+
+        private void Start()
+        {
+            Destroy(gameObject, delay);
+        }
     }
 }

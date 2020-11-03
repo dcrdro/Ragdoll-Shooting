@@ -1,6 +1,10 @@
-﻿using UnityEngine;
+﻿using Core.General;
+using UnityEngine;
 
-public interface IProjectile : IOriginDerived
+namespace Core.Fighting
 {
-    void Launch(Vector3 velocity);
+    public interface IProjectile : IOriginDerived
+    {
+        void Launch(Vector3 velocity);
+    }
 }

@@ -1,45 +1,50 @@
 ﻿using System;
+using Core.Fighting;
+using Core.Fighting.Args;
 using UnityEngine;
 
-public class Health : MonoBehaviour, IHealth
+namespace Game.Fighting.Health
 {
-    [SerializeField] private float healthMax;
-
-    public float HealthAmount { get; private set; }
-    public float MaxHealthAmount => healthMax;
-
-    public bool IsDead => HealthAmount <= 0;
-
-    public event Action<IDamagable, DamageArgs> DamageTaken;
-    public event Action<IHealable, HealArgs> HealTaken;
-    public event Action<DeathArgs> Died;
-
-    private void Awake()
+    public class Health : MonoBehaviour, IHealth
     {
-        HealthAmount = healthMax;
-    }
+        [SerializeField] private float healthMax;
 
-    public void TakeDamage(DamageArgs args)
-    {
-        UpdateHealth(args.Origin, args.Dealer, -args.Damage);
-        DamageTaken?.Invoke(this, args);
-    }
-    
-    public void TakeHeal(HealArgs args)
-    {
-        UpdateHealth(args.Origin, args.Dealer, +args.Heal);
-        HealTaken?.Invoke(this, args);
-    }
+        public float HealthAmount { get; private set; }
+        public float MaxHealthAmount => healthMax;
 
-    private void UpdateHealth(in GameObject origin, in GameObject dealer, in float amount)
-    {
-        HealthAmount += amount;
-        HealthAmount = Mathf.Clamp(HealthAmount, 0, healthMax);
+        public bool IsDead => HealthAmount <= 0;
 
-        print("update health: " + HealthAmount);
-        if (HealthAmount <= 0)
+        public event Action<IDamagable, DamageArgs> DamageTaken;
+        public event Action<IHealable, HealArgs> HealTaken;
+        public event Action<DeathArgs> Died;
+
+        private void Awake()
         {
-            Died?.Invoke(new DeathArgs(origin, dealer));
+            HealthAmount = healthMax;
+        }
+
+        public void TakeDamage(DamageArgs args)
+        {
+            UpdateHealth(args.Origin, args.Dealer, -args.Damage);
+            DamageTaken?.Invoke(this, args);
+        }
+    
+        public void TakeHeal(HealArgs args)
+        {
+            UpdateHealth(args.Origin, args.Dealer, +args.Heal);
+            HealTaken?.Invoke(this, args);
+        }
+
+        private void UpdateHealth(in GameObject origin, in GameObject dealer, in float amount)
+        {
+            HealthAmount += amount;
+            HealthAmount = Mathf.Clamp(HealthAmount, 0, healthMax);
+
+            print("update health: " + HealthAmount);
+            if (HealthAmount <= 0)
+            {
+                Died?.Invoke(new DeathArgs(origin, dealer));
+            }
         }
     }
 }

@@ -1,30 +1,34 @@
 ﻿using System;
+using Core.General;
 using UnityEngine;
 
-public class LifeTimer : MonoBehaviour, ITimable
+namespace Game.General
 {
-    [SerializeField] private float lifeTime;
-
-    private float remainTime;
-    private bool isEnded;
-
-    public float Capacity => lifeTime;
-    public float Current => remainTime;
-    
-    public event Action Ended;
-
-    private void Awake() => remainTime = lifeTime;
-
-    // TODO: replace on update callback
-    private void Update()
+    public class LifeTimer : MonoBehaviour, ITimable
     {
-        if (isEnded) return;
-        
-        remainTime -= Time.deltaTime;
-        if (remainTime <= 0)
+        [SerializeField] private float lifeTime;
+
+        private float remainTime;
+        private bool isEnded;
+
+        public float Capacity => lifeTime;
+        public float Current => remainTime;
+    
+        public event Action Ended;
+
+        private void Awake() => remainTime = lifeTime;
+
+        // TODO: replace on update callback
+        private void Update()
         {
-            isEnded = true;
-            Ended?.Invoke();
+            if (isEnded) return;
+        
+            remainTime -= Time.deltaTime;
+            if (remainTime <= 0)
+            {
+                isEnded = true;
+                Ended?.Invoke();
+            }
         }
     }
 }

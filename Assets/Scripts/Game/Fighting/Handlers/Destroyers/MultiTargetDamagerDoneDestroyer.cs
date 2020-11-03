@@ -1,24 +1,28 @@
 ﻿using System.Collections.Generic;
+using Core.Fighting;
 using UnityEngine;
 
-public class MultiTargetDamagerDoneDestroyer : MonoBehaviour
+namespace Game.Fighting.Handlers.Destroyers
 {
-    [SerializeField] private MonoBehaviour damager; // as IMultiTargetDamager
-
-    private IMultiTargetDamager Damager => (IMultiTargetDamager) damager;
-
-    private void OnEnable()
+    public class MultiTargetDamagerDoneDestroyer : MonoBehaviour
     {
-        Damager.Damaged += OnDamaged;
-    }
+        [SerializeField] private MonoBehaviour damager; // as IMultiTargetDamager
 
-    private void OnDisable()
-    {
-        Damager.Damaged -= OnDamaged;
-    }
+        private IMultiTargetDamager Damager => (IMultiTargetDamager) damager;
 
-    private void OnDamaged(IEnumerable<IDamagable> damagables)
-    {
-        Destroy(gameObject);
+        private void OnEnable()
+        {
+            Damager.Damaged += OnDamaged;
+        }
+
+        private void OnDisable()
+        {
+            Damager.Damaged -= OnDamaged;
+        }
+
+        private void OnDamaged(IEnumerable<IDamagable> damagables)
+        {
+            Destroy(gameObject);
+        }
     }
 }

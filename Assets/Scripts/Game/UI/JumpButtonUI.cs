@@ -1,9 +1,14 @@
-﻿using UnityEngine;
+﻿using Core.UI;
+using Game.General;
+using UnityEngine;
 
-public class JumpButtonUI : UIBase
+namespace Game.UI
 {
-    [SerializeField] private Jumper jumper;
+    public class JumpButtonUI : UIBase
+    {
+        [SerializeField] private Jumper jumper;
     
-    // UI Event
-    public void OnJump() => jumper.TryJump();
+        // UI Event
+        public void OnJump() => jumper.TryJump();
+    }
 }

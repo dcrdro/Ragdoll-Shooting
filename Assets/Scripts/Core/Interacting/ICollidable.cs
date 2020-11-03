@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 
-public interface ICollidable
+namespace Core.Interacting
 {
-    // add event ?
+    public interface ICollidable
+    {
+        // add event ?
     
-    LayerMask CollidableLayer { get; }
-    void OnCollide(Collision2D collision);
+        LayerMask CollidableLayer { get; }
+        void OnCollide(Collision2D collision);
+    }
 }

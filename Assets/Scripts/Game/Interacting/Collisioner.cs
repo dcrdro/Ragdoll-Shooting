@@ -1,27 +1,31 @@
-﻿using UnityEngine;
+﻿using Core.Interacting;
+using UnityEngine;
 
-public class Collisioner : MonoBehaviour
+namespace Game.Interacting
 {
-    [SerializeField] private CollisionSender2D trigger;
-    [SerializeField] private MonoBehaviour collidable; // as ICollidable
-
-    private ICollidable Collidable => (ICollidable) collidable;
-
-    void OnEnable()
+    public class Collisioner : MonoBehaviour
     {
-        trigger.OnEnter += OnEnter;
-    }
+        [SerializeField] private CollisionSender2D trigger;
+        [SerializeField] private MonoBehaviour collidable; // as ICollidable
 
-    void OnDisable()
-    {
-        trigger.OnEnter -= OnEnter;
-    }
+        private ICollidable Collidable => (ICollidable) collidable;
 
-    private void OnEnter(Collision2D collider)
-    {
-        if ((Collidable.CollidableLayer & 1 << collider.gameObject.layer) > 0)
+        void OnEnable()
         {
-            Collidable.OnCollide(collider);
+            trigger.OnEnter += OnEnter;
+        }
+
+        void OnDisable()
+        {
+            trigger.OnEnter -= OnEnter;
+        }
+
+        private void OnEnter(Collision2D collider)
+        {
+            if ((Collidable.CollidableLayer & 1 << collider.gameObject.layer) > 0)
+            {
+                Collidable.OnCollide(collider);
+            }
         }
     }
 }

@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 
-public struct DamageArgs
+namespace Core.Fighting.Args
 {
-    public GameObject Origin { get; } 
-    public GameObject Dealer { get; }
-    public float Damage { get; }
-
-    public DamageArgs(GameObject origin, GameObject dealer, float damage)
+    public struct DamageArgs
     {
-        Origin = origin;
-        Dealer = dealer;
-        Damage = damage;
+        public GameObject Origin { get; } 
+        public GameObject Dealer { get; }
+        public float Damage { get; }
+
+        public DamageArgs(GameObject origin, GameObject dealer, float damage)
+        {
+            Origin = origin;
+            Dealer = dealer;
+            Damage = damage;
+        }
     }
 }

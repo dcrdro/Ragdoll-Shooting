@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-public abstract class EffectBase : MonoBehaviour, IEffect
+namespace Core.Effects
 {
-    public abstract void Play();
+    public abstract class EffectBase : MonoBehaviour, IEffect
+    {
+        public abstract void Play();
+    }
 }

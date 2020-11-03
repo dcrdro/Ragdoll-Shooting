@@ -1,34 +1,40 @@
-﻿using UnityEngine;
+﻿using Core.Fighting;
+using Core.Fighting.Args;
+using Core.UI;
+using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthUI : UIBase
+namespace Game.UI
 {
-    [SerializeField] private MonoBehaviour health; // as IHealth
-
-    [SerializeField] private Slider healthSlider;
-
-    private IHealth Health => (IHealth) health;
-
-    private void Start() => UpdateHealthUI();
-
-    private void OnEnable()
+    public class HealthUI : UIBase
     {
-        Health.DamageTaken += OnDamageTaken;
-        Health.HealTaken += OnHealTaken;
-    }
+        [SerializeField] private MonoBehaviour health; // as IHealth
 
-    private void OnDisable()
-    {
-        Health.DamageTaken -= OnDamageTaken;
-        Health.HealTaken -= OnHealTaken;
-    }
+        [SerializeField] private Slider healthSlider;
 
-    private void OnDamageTaken(IDamagable damagable, DamageArgs args) => UpdateHealthUI();
-    private void OnHealTaken(IHealable healable, HealArgs args) => UpdateHealthUI();
+        private IHealth Health => (IHealth) health;
 
-    private void UpdateHealthUI()
-    {
-        float part = Health.HealthAmount / Health.MaxHealthAmount;
-        healthSlider.value = part;
+        private void Start() => UpdateHealthUI();
+
+        private void OnEnable()
+        {
+            Health.DamageTaken += OnDamageTaken;
+            Health.HealTaken += OnHealTaken;
+        }
+
+        private void OnDisable()
+        {
+            Health.DamageTaken -= OnDamageTaken;
+            Health.HealTaken -= OnHealTaken;
+        }
+
+        private void OnDamageTaken(IDamagable damagable, DamageArgs args) => UpdateHealthUI();
+        private void OnHealTaken(IHealable healable, HealArgs args) => UpdateHealthUI();
+
+        private void UpdateHealthUI()
+        {
+            float part = Health.HealthAmount / Health.MaxHealthAmount;
+            healthSlider.value = part;
+        }
     }
 }

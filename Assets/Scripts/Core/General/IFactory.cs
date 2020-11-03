@@ -1,6 +1,9 @@
-﻿public interface IFactory<TID, TProduct>
+﻿namespace Core.General
 {
-    TProduct Produce(TID id);
+    public interface IFactory<TID, TProduct>
+    {
+        TProduct Produce(TID id);
     
-    int Size { get; }
+        int Size { get; }
+    }
 }

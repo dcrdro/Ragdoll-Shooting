@@ -1,8 +1,11 @@
 ﻿using System;
 
-[Serializable]
-public struct HitboxConfig
+namespace Game.Fighting.Hitboxes
 {
-    public float DamageMultiplier;
-    public float ForceMultiplier;
+    [Serializable]
+    public struct HitboxConfig
+    {
+        public float DamageMultiplier;
+        public float ForceMultiplier;
+    }
 }

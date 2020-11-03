@@ -1,8 +1,12 @@
-﻿using UnityEngine;
+﻿using Game.Control;
+using UnityEngine;
 
-public class ControlDisabler : GameOverDisabler
+namespace Game.Fighting.Handlers
 {
-    [SerializeField] private FighterControllerBase fighterController;
+    public class ControlDisabler : GameOverDisabler
+    {
+        [SerializeField] private FighterControllerBase fighterController;
 
-    protected override void OnGameOver() => fighterController.enabled = false;
+        protected override void OnGameOver() => fighterController.enabled = false;
+    }
 }

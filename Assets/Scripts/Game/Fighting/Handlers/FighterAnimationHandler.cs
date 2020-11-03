@@ -1,27 +1,32 @@
-﻿using UnityEngine;
+﻿using Game.Fighting.Shooting;
+using Game.General;
+using UnityEngine;
 
-public class FighterAnimationHandler : MonoBehaviour
+namespace Game.Fighting.Handlers
 {
-    private readonly int jumpHash = Animator.StringToHash("Jump");
-    private readonly int shootHash = Animator.StringToHash("Shoot");
-    
-    [SerializeField] private Animator animator;
-    
-    [SerializeField] private Jumper jumper;
-    [SerializeField] private Weaponer weaponer;
-
-    private void OnEnable()
+    public class FighterAnimationHandler : MonoBehaviour
     {
-        jumper.Jumped += OnJumped;
-        weaponer.WeaponApplied += OnWeaponApplied;
-    }
+        private readonly int jumpHash = Animator.StringToHash("Jump");
+        private readonly int shootHash = Animator.StringToHash("Shoot");
+    
+        [SerializeField] private Animator animator;
+    
+        [SerializeField] private Jumper jumper;
+        [SerializeField] private Weaponer weaponer;
 
-    private void OnDisable()
-    {
-        jumper.Jumped -= OnJumped;
-        weaponer.WeaponApplied -= OnWeaponApplied;
-    }
+        private void OnEnable()
+        {
+            jumper.Jumped += OnJumped;
+            weaponer.WeaponApplied += OnWeaponApplied;
+        }
 
-    private void OnJumped() => animator.SetTrigger(jumpHash);
-    private void OnWeaponApplied() => animator.SetTrigger(shootHash);
+        private void OnDisable()
+        {
+            jumper.Jumped -= OnJumped;
+            weaponer.WeaponApplied -= OnWeaponApplied;
+        }
+
+        private void OnJumped() => animator.SetTrigger(jumpHash);
+        private void OnWeaponApplied() => animator.SetTrigger(shootHash);
+    }
 }

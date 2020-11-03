@@ -1,36 +1,40 @@
 ﻿using System;
+using Core.Fighting;
 using UnityEngine;
 
-public class SolidBody : MonoBehaviour, IForceable
+namespace Game.Physics
 {
-    [SerializeField] private Animator animator;
-
-    [SerializeField] private Rigidbody2D solidRigidbody;
-    [SerializeField] private Collider2D checkCollider;
-
-    public event Action<IForceable, Vector3> ForceApplied;
-
-    public Collider2D CheckCollider => checkCollider;
-
-    public void ApplyForce(Vector3 force)
+    public class SolidBody : MonoBehaviour, IForceable
     {
-        solidRigidbody.AddForce(force);
-        ForceApplied?.Invoke(this, force);
-    }
+        [SerializeField] private Animator animator;
 
-    public void Stop() => solidRigidbody.velocity = Vector2.zero;
+        [SerializeField] private Rigidbody2D solidRigidbody;
+        [SerializeField] private Collider2D checkCollider;
 
-    public void Activate()
-    {
-        solidRigidbody.isKinematic = false;
-        animator.enabled = true;
-        checkCollider.enabled = true;
-    }
+        public event Action<IForceable, Vector3> ForceApplied;
 
-    public void Deactivate()
-    {
-        solidRigidbody.isKinematic = true;
-        checkCollider.enabled = false;
-        animator.enabled = false;
+        public Collider2D CheckCollider => checkCollider;
+
+        public void ApplyForce(Vector3 force)
+        {
+            solidRigidbody.AddForce(force);
+            ForceApplied?.Invoke(this, force);
+        }
+
+        public void Stop() => solidRigidbody.velocity = Vector2.zero;
+
+        public void Activate()
+        {
+            solidRigidbody.isKinematic = false;
+            animator.enabled = true;
+            checkCollider.enabled = true;
+        }
+
+        public void Deactivate()
+        {
+            solidRigidbody.isKinematic = true;
+            checkCollider.enabled = false;
+            animator.enabled = false;
+        }
     }
 }

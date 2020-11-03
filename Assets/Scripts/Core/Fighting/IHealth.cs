@@ -1,10 +1,14 @@
 ﻿using System;
+using Core.Fighting.Args;
 
-public interface IHealth : IDamagable, IHealable
+namespace Core.Fighting
 {
-    float HealthAmount { get; }
-    float MaxHealthAmount { get; }
-    bool IsDead { get; }
+    public interface IHealth : IDamagable, IHealable
+    {
+        float HealthAmount { get; }
+        float MaxHealthAmount { get; }
+        bool IsDead { get; }
 
-    event Action<DeathArgs> Died;
+        event Action<DeathArgs> Died;
+    }
 }

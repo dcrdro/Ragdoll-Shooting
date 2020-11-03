@@ -1,9 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-[Serializable]
-public struct FighterConfig
+namespace Game.Player
 {
-    public string Name;
-    public Vector3 Rotation;
+    [Serializable]
+    public struct FighterConfig
+    {
+        public string Name;
+        public Vector3 Rotation;
+    }
 }

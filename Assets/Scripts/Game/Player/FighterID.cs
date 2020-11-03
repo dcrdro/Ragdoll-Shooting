@@ -1,6 +1,9 @@
-﻿public enum FighterID
+﻿namespace Game.Player
 {
-    None = 0,
-    Left,
-    Right
+    public enum FighterID
+    {
+        None = 0,
+        Left,
+        Right
+    }
 }

@@ -1,3 +1,6 @@
-﻿public class GunWeapon : ProjectileWeapon
+﻿namespace Game.Fighting.Shooting
 {
+    public class GunWeapon : ProjectileWeapon
+    {
+    }
 }

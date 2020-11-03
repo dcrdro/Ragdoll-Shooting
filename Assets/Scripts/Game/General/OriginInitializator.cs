@@ -1,15 +1,19 @@
-﻿using UnityEngine;
+﻿using Core.General;
+using UnityEngine;
 
-public class OriginInitializator : MonoBehaviour
+namespace Game.General
 {
-    [SerializeField] private GameObject origin;
-    
-    private void Awake()
+    public class OriginInitializator : MonoBehaviour
     {
-        IOriginDerived[] originDerivedObjects = GetComponentsInChildren<IOriginDerived>();
-        foreach (var derived in originDerivedObjects)
+        [SerializeField] private GameObject origin;
+    
+        private void Awake()
         {
-            derived.Origin = origin;
+            IOriginDerived[] originDerivedObjects = GetComponentsInChildren<IOriginDerived>();
+            foreach (var derived in originDerivedObjects)
+            {
+                derived.Origin = origin;
+            }
         }
     }
 }

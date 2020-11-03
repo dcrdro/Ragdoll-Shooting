@@ -1,17 +1,23 @@
 ﻿using System;
+using Core.Fighting;
+using Core.Fighting.Args;
+using Core.General;
 using UnityEngine;
 
-public class Damager : MonoBehaviour, IDamager, IOriginDerived
+namespace Game.Fighting.Damagers
 {
-    [SerializeField] private float damage;
-    
-    public event Action<IDamagable> Damaged;
-    
-    public GameObject Origin { get; set; }
-
-    public void Damage(IDamagable damagable)
+    public class Damager : MonoBehaviour, IDamager, IOriginDerived
     {
-        damagable.TakeDamage(new DamageArgs(Origin, gameObject, damage));
-        Damaged?.Invoke(damagable);
+        [SerializeField] private float damage;
+    
+        public event Action<IDamagable> Damaged;
+    
+        public GameObject Origin { get; set; }
+
+        public void Damage(IDamagable damagable)
+        {
+            damagable.TakeDamage(new DamageArgs(Origin, gameObject, damage));
+            Damaged?.Invoke(damagable);
+        }
     }
 }

@@ -1,8 +1,12 @@
-﻿using UnityEngine;
+﻿using Game.Fighting.Handlers;
+using UnityEngine;
 
-public class BonusesSpawnerDisabler : GameOverDisabler
+namespace Game.Management
 {
-    [SerializeField] private BonusesSpawner spawner;
+    public class BonusesSpawnerDisabler : GameOverDisabler
+    {
+        [SerializeField] private BonusesSpawner spawner;
 
-    protected override void OnGameOver() => spawner.enabled = false;
+        protected override void OnGameOver() => spawner.enabled = false;
+    }
 }

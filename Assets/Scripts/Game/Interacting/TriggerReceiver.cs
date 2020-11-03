@@ -1,8 +1,12 @@
-﻿using UnityEngine;
+﻿using Core.General;
+using UnityEngine;
 
-public class TriggerReceiver : MonoBehaviour, IRootReference
+namespace Game.Interacting
 {
-    [SerializeField] private GameObject rootObject;
+    public class TriggerReceiver : MonoBehaviour, IRootReference
+    {
+        [SerializeField] private GameObject rootObject;
 
-    public GameObject RootObject => rootObject;
+        public GameObject RootObject => rootObject;
+    }
 }

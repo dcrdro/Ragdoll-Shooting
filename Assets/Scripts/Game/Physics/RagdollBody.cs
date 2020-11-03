@@ -1,22 +1,25 @@
 ﻿using UnityEngine;
 
-public class RagdollBody : MonoBehaviour
+namespace Game.Physics
 {
-    [SerializeField] private RagdollBone[] bones;
-
-    public void Activate()
+    public class RagdollBody : MonoBehaviour
     {
-        foreach (var bone in bones)
+        [SerializeField] private RagdollBone[] bones;
+
+        public void Activate()
         {
-            bone.Activate();
+            foreach (var bone in bones)
+            {
+                bone.Activate();
+            }
         }
-    }
 
-    public void Deactivate()
-    {
-        foreach (var bone in bones)
+        public void Deactivate()
         {
-            bone.Deactivate();
+            foreach (var bone in bones)
+            {
+                bone.Deactivate();
+            }
         }
     }
 }

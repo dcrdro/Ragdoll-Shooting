@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public interface IMultiTargetDamager
+namespace Core.Fighting
 {
-     event Action<IEnumerable<IDamagable>> Damaged;
+     public interface IMultiTargetDamager
+     {
+          event Action<IEnumerable<IDamagable>> Damaged;
      
-     void Damage(IEnumerable<IDamagable> damagables);
+          void Damage(IEnumerable<IDamagable> damagables);
+     }
 }
