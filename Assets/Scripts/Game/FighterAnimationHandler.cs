@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class FighterAnimationHandler : MonoBehaviour
 {
+    private readonly int jumpHash = Animator.StringToHash("Jump");
+    private readonly int shootHash = Animator.StringToHash("Shoot");
+    
     [SerializeField] private Animator animator;
     
     [SerializeField] private Jumper jumper;
     [SerializeField] private Weaponer weaponer;
-    
+
     private void OnEnable()
     {
         jumper.OnJumped += OnJumped;
@@ -21,6 +24,6 @@ public class FighterAnimationHandler : MonoBehaviour
         weaponer.OnAppliedWeapon -= OnAppliedWeapon;
     }
 
-    private void OnJumped() => animator.SetTrigger("Jump");
-    private void OnAppliedWeapon() => animator.SetTrigger("Shoot");
+    private void OnJumped() => animator.SetTrigger(jumpHash);
+    private void OnAppliedWeapon() => animator.SetTrigger(shootHash);
 }
