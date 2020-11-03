@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunWeapon : Weapon, IOriginDerived
+public class GunWeapon : WeaponBase
 {
     [SerializeField] private BulletProjectile bullet;
     [SerializeField] private Transform shootPoint;
     [SerializeField] private float bulletSpeed;
-    
-    public GameObject Origin { get; set; }
 
     public override void Shoot()
     {

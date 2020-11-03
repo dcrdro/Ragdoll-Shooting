@@ -6,7 +6,7 @@ using UnityEngine.PlayerLoop;
 
 public class Weaponer : MonoBehaviour, IOriginDerived
 {
-    [SerializeField] private Weapon weapon;
+    [SerializeField] private WeaponBase weapon;
 
     public GameObject Origin { get; set; }
     
