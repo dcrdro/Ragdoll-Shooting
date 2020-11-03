@@ -31,7 +31,7 @@ public class Health : MonoBehaviour, IHealth
         OnHealTaken?.Invoke(this, args);
     }
 
-    private void UpdateHealth(in GameObject origin, in GameObject dealer, float amount)
+    private void UpdateHealth(in GameObject origin, in GameObject dealer, in float amount)
     {
         HealthAmount += amount;
         HealthAmount = Mathf.Clamp(HealthAmount, 0, healthMax);
