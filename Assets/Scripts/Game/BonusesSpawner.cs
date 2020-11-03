@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using Unity.Jobs.LowLevel.Unsafe;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BonusesSpawner : MonoBehaviour
 {
@@ -29,4 +29,6 @@ public class BonusesSpawner : MonoBehaviour
         product.transform.parent = spawnPoint;
         product.transform.localPosition = Vector3.zero;
     }
+
+    private void OnDisable() => StopAllCoroutines();
 }

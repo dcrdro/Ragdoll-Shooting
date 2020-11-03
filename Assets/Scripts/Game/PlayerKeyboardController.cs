@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerController : UnitControllerBase
+public class PlayerKeyboardController : FighterControllerBase
 {
     [SerializeField] private KeyCode shootKey;
     [SerializeField] private KeyCode jumpKey;

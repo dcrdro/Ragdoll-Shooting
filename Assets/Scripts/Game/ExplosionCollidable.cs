@@ -37,7 +37,7 @@ public class ExplosionCollidable : MonoBehaviour, ICollidable, IRootReference
             {
                 if (root.RootObject.TryGetComponent<PhysicsSwitcher>(out var switcher))
                 {
-                    switcher.Switch(); // may be bottleneck
+                    switcher.Switch(PhysicsState.Ragdoll);
                 }
             }
         }

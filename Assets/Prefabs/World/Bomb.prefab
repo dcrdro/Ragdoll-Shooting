@@ -155,8 +155,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 147456
   explosionPoint: {fileID: 821157370965886936}
-  explosionRadius: 5.39
-  explosionVelocity: {x: 3000, y: 15000}
+  explosionRadius: 6.77
+  explosionVelocity: {x: 6000, y: 12000}
   rootObject: {fileID: 2310308077454553661}
   explosionDamager: {fileID: 6831745118620344614}
 --- !u!114 &6831745118620344614
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6e5a6db44b47f8bfc7d22999a59118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 100
 --- !u!114 &7569060626700984702
 MonoBehaviour:
   m_ObjectHideFlags: 0
