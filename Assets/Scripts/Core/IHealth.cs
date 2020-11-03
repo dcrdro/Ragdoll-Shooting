@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 public interface IHealth : IDamagable, IHealable
 {
