@@ -99,12 +99,13 @@ GameObject:
   - component: {fileID: 7231592446181848852}
   - component: {fileID: 4442730655817877357}
   - component: {fileID: 1592864874518139497}
+  - component: {fileID: 431666121306769481}
   - component: {fileID: 6831745118620344614}
   - component: {fileID: 7569060626700984702}
   - component: {fileID: 8143695945205101267}
   - component: {fileID: 8673562092696753084}
   m_Layer: 0
-  m_Name: Bomb
+  m_Name: Bomb Spawnable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,13 +152,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaeda2b11c51d584d81faac4abacda6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exploder: {fileID: 431666121306769481}
+--- !u!114 &431666121306769481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2310308077454553661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44307eb06d6d4af693ad7a514ebb49cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   explosionLayer:
     serializedVersion: 2
     m_Bits: 147456
   explosionPoint: {fileID: 821157370965886936}
   explosionRadius: 6.77
   explosionVelocity: {x: 6000, y: 12000}
-  rootObject: {fileID: 2310308077454553661}
   explosionDamager: {fileID: 6831745118620344614}
 --- !u!114 &6831745118620344614
 MonoBehaviour:

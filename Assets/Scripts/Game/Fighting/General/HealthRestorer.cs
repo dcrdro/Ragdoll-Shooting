@@ -30,7 +30,7 @@ namespace Game.Fighting.General
         private void RestoreHealth(DeathArgs deathArgs)
         {
             GameObject restoreTarget = deathArgs.Origin;
-            if (restoreTarget.TryGetComponent<IHealable>(out var healable))
+            if (!restoreTarget && restoreTarget.TryGetComponent<IHealable>(out var healable))
             {
                 healable.TakeHeal(new HealArgs(gameObject, gameObject, restoreAmount));
             }
