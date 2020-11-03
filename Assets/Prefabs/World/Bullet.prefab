@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4467604483513478271}
   - component: {fileID: 7847659887237165884}
+  - component: {fileID: 1753700701146466499}
   - component: {fileID: 9046431406880978465}
   - component: {fileID: 2485716222650230993}
   - component: {fileID: 6989452627202953040}
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5610181239338940567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.98, y: 0.3, z: -38.566525}
-  m_LocalScale: {x: 1.4103, y: 1.4103, z: 1.4103}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2214700484801509885}
   m_Father: {fileID: 0}
@@ -49,6 +50,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletRigidbody: {fileID: 6451390394113924861}
+--- !u!114 &1753700701146466499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5610181239338940567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8948981dc374fb5b06564d81c7e0992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   damage: 5
 --- !u!114 &9046431406880978465
 MonoBehaviour:
@@ -76,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32fa8ab6c1d07b4cbee3a29d23c8770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damager: {fileID: 7847659887237165884}
+  damager: {fileID: 1753700701146466499}
   damageMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -92,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8574c9cdf725414c9b5d4482557e7c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damager: {fileID: 7847659887237165884}
+  damager: {fileID: 1753700701146466499}
 --- !u!114 &3764021874744933163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +206,7 @@ Transform:
   m_GameObject: {fileID: 6471549208998769044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4103, y: 1.4103, z: 1.4103}
   m_Children:
   - {fileID: 549204003744050786}
   - {fileID: 2885050610645384229}
