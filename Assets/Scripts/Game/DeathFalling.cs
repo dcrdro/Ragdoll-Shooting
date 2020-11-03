@@ -11,5 +11,5 @@ public class DeathFalling : MonoBehaviour
     private void OnEnable() => Health.OnDied += OnDied;
     private void OnDisable() => Health.OnDied -= OnDied;
 
-    private void OnDied(DeathArgs obj) => physicsSwitcher.Switch();
+    private void OnDied(DeathArgs obj) => physicsSwitcher.Switch(PhysicsState.Ragdoll);
 }
