@@ -8,8 +8,11 @@ public class ProjectileWeapon : WeaponBase
 
     public override void Shoot()
     {
-        IProjectile instance = Instantiate(projectile, shootPoint.position, Quaternion.identity) as IProjectile;
-        instance.Origin = Origin;
-        instance.Launch(shootPoint.right * projectileSpeed);
+        MonoBehaviour instance = Instantiate(projectile, shootPoint.position, Quaternion.identity);
+        foreach (var derived in instance.GetComponentsInChildren<IOriginDerived>())
+        {
+            derived.Origin = Origin;
+        }
+        ((IProjectile) instance).Launch(shootPoint.right * projectileSpeed);
     }
 }
