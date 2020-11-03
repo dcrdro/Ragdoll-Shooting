@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ControlDisabler : GameOverDisabler
 {
-    [SerializeField] private UnitControllerBase unitController;
+    [SerializeField] private FighterControllerBase fighterController;
 
-    protected override void OnGameOver() => unitController.enabled = false;
+    protected override void OnGameOver() => fighterController.enabled = false;
 }

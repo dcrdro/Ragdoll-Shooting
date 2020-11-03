@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitAnimationHandler : MonoBehaviour
+public class FighterAnimationHandler : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     

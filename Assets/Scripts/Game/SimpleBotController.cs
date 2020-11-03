@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class SimpleBotController : UnitControllerBase
+public class SimpleBotController : FighterControllerBase
 {
     private const float doubleJumpDelay = 0.5f;
         

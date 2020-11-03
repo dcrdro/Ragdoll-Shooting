@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class UnitControllerBase : MonoBehaviour
+public abstract class FighterControllerBase : MonoBehaviour
 {
     [SerializeField] protected Jumper jumper;
     [SerializeField] protected Weaponer weaponer;

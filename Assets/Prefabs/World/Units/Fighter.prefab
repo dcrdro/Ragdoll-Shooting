@@ -2910,7 +2910,7 @@ PrefabInstance:
     - target: {fileID: 2678916964758497681, guid: b47a6f2664f78394baf59f55fdf05541,
         type: 3}
       propertyPath: m_Name
-      value: Man
+      value: Fighter
       objectReference: {fileID: 0}
     - target: {fileID: 2678916964758497681, guid: b47a6f2664f78394baf59f55fdf05541,
         type: 3}
