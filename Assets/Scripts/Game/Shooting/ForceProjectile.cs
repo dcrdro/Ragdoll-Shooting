@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class ForceProjectile : MonoBehaviour, IProjectile, IOriginDerived
+public class ForceProjectile : MonoBehaviour, IProjectile
 {
     [SerializeField] private Rigidbody2D bulletRigidbody;
     
