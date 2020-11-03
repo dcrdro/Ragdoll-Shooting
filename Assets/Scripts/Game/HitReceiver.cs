@@ -7,11 +7,11 @@ public class HitReceiver : MonoBehaviour, IDamagable, IForceable
 
     public HitboxID HitboxID => hitboxID;
 
-    public event Action<IDamagable, DamageArgs> OnDamageTaken;
-    public event Action<IForceable, Vector3> OnForceApplied;
+    public event Action<IDamagable, DamageArgs> DamageTaken;
+    public event Action<IForceable, Vector3> ForceApplied;
 
-    public void TakeDamage(DamageArgs args) => OnDamageTaken?.Invoke(this, args);
+    public void TakeDamage(DamageArgs args) => DamageTaken?.Invoke(this, args);
 
-    public void ApplyForce(Vector3 force) => OnForceApplied?.Invoke(this, force);
+    public void ApplyForce(Vector3 force) => ForceApplied?.Invoke(this, force);
     public void Stop() { }
 }

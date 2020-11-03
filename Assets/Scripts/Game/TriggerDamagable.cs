@@ -7,10 +7,10 @@ public class TriggerDamagable : MonoBehaviour, IDamagable
 
     private IDamagable Damagable => (IDamagable) damagable;
 
-    public event Action<IDamagable, DamageArgs> OnDamageTaken
+    public event Action<IDamagable, DamageArgs> DamageTaken
     {
-        add => Damagable.OnDamageTaken += value;
-        remove => Damagable.OnDamageTaken -= value;
+        add => Damagable.DamageTaken += value;
+        remove => Damagable.DamageTaken -= value;
     }
 
     public void TakeDamage(DamageArgs args) => Damagable.TakeDamage(args);

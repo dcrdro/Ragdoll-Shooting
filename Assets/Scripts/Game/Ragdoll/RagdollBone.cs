@@ -6,7 +6,7 @@ public class RagdollBone : MonoBehaviour, IForceable
     [SerializeField] private Rigidbody2D boneRigidbody;
     [SerializeField] private HingeJoint2D boneJoint;
 
-    public event Action<IForceable, Vector3> OnForceApplied;
+    public event Action<IForceable, Vector3> ForceApplied;
 
     public void Activate()
     {
@@ -23,7 +23,7 @@ public class RagdollBone : MonoBehaviour, IForceable
     public void ApplyForce(Vector3 force)
     {
         boneRigidbody.AddForce(force);
-        OnForceApplied?.Invoke(this, force);
+        ForceApplied?.Invoke(this, force);
     }
 
     public void Stop() => boneRigidbody.velocity = Vector2.zero;

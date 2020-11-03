@@ -14,7 +14,7 @@ public class DamageHandler : MonoBehaviour
     {
         foreach (var receiver in hitReceivers)
         {
-            receiver.OnDamageTaken += OnDamageTaken;
+            receiver.DamageTaken += OnDamageTaken;
         }        
     }
 
@@ -22,7 +22,7 @@ public class DamageHandler : MonoBehaviour
     {
         foreach (var receiver in hitReceivers)
         {
-            receiver.OnDamageTaken -= OnDamageTaken;
+            receiver.DamageTaken -= OnDamageTaken;
         }        
     }
 

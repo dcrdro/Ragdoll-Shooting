@@ -2,7 +2,7 @@
 
 public interface IDamager
 {
-     event Action<IDamagable> OnDamaged;
+     event Action<IDamagable> Damaged;
      
      void Damage(IDamagable damagable);
 }

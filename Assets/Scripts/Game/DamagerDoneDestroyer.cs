@@ -9,12 +9,12 @@ public class DamagerDoneDestroyer : MonoBehaviour
 
     private void OnEnable()
     {
-        Damager.OnDamaged += OnDamaged;
+        Damager.Damaged += OnDamaged;
     }
 
     private void OnDisable()
     {
-        Damager.OnDamaged -= OnDamaged;
+        Damager.Damaged -= OnDamaged;
     }
 
     private void OnDamaged(IDamagable obj)

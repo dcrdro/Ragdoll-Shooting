@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class AppManager : MonoBehaviour
 {
-    public event Action OnPauseGame;
-    public event Action OnResumeGame;
+    public event Action GamePaused;
+    public event Action GameResumed;
     
     public void RestartGame()
     {
@@ -16,12 +16,12 @@ public class AppManager : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
-        OnPauseGame?.Invoke();
+        GamePaused?.Invoke();
     }
 
     public void UnpauseGame()
     {
         Time.timeScale = 1;
-        OnResumeGame?.Invoke();
+        GameResumed?.Invoke();
     }
 }

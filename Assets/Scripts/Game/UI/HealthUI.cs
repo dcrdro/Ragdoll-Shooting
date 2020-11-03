@@ -14,14 +14,14 @@ public class HealthUI : UIBase
 
     private void OnEnable()
     {
-        Health.OnDamageTaken += OnDamageTaken;
-        Health.OnHealTaken += OnHealTaken;
+        Health.DamageTaken += OnDamageTaken;
+        Health.HealTaken += OnHealTaken;
     }
 
     private void OnDisable()
     {
-        Health.OnDamageTaken -= OnDamageTaken;
-        Health.OnHealTaken -= OnHealTaken;
+        Health.DamageTaken -= OnDamageTaken;
+        Health.HealTaken -= OnHealTaken;
     }
 
     private void OnDamageTaken(IDamagable damagable, DamageArgs args) => UpdateHealthUI();

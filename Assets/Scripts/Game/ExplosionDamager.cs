@@ -9,7 +9,7 @@ public class ExplosionDamager : MonoBehaviour, IMultiTargetDamager
     private GameObject explosionOrigin;
     private GameObject explosionSource;
     
-    public event Action<IEnumerable<IDamagable>> OnDamaged;
+    public event Action<IEnumerable<IDamagable>> Damaged;
 
     public void Init(GameObject origin, GameObject source)
     {
@@ -24,6 +24,6 @@ public class ExplosionDamager : MonoBehaviour, IMultiTargetDamager
         {
             damagable.TakeDamage(damageArgs);
         }
-        OnDamaged?.Invoke(damagables);
+        Damaged?.Invoke(damagables);
     }
 }

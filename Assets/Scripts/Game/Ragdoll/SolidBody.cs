@@ -8,14 +8,14 @@ public class SolidBody : MonoBehaviour, IForceable
     [SerializeField] private Rigidbody2D solidRigidbody;
     [SerializeField] private Collider2D checkCollider;
 
-    public event Action<IForceable, Vector3> OnForceApplied;
+    public event Action<IForceable, Vector3> ForceApplied;
 
     public Collider2D CheckCollider => checkCollider;
 
     public void ApplyForce(Vector3 force)
     {
         solidRigidbody.AddForce(force);
-        OnForceApplied?.Invoke(this, force);
+        ForceApplied?.Invoke(this, force);
     }
 
     public void Stop() => solidRigidbody.velocity = Vector2.zero;

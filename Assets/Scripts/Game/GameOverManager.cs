@@ -10,18 +10,18 @@ public class GameOverManager : MonoBehaviour
     
     public FighterID WinnerID { get; private set; }
     
-    public event Action OnGameOver;
+    public event Action DidGameOver;
     
     private void OnEnable()
     {
-        fighterOneHealth.OnDied += OnOneDied;
-        fighterTwoHealth.OnDied += OnTwoDied;
+        fighterOneHealth.Died += OnOneDied;
+        fighterTwoHealth.Died += OnTwoDied;
     }
 
     private void OnDisable()
     {
-        fighterOneHealth.OnDied -= OnOneDied;
-        fighterTwoHealth.OnDied -= OnTwoDied;
+        fighterOneHealth.Died -= OnOneDied;
+        fighterTwoHealth.Died -= OnTwoDied;
     }
 
     private void OnOneDied(DeathArgs obj)
@@ -40,11 +40,11 @@ public class GameOverManager : MonoBehaviour
     {
         print("winner: " + winnerID);
         
-        fighterOneHealth.OnDied -= OnOneDied;
-        fighterTwoHealth.OnDied -= OnTwoDied;
+        fighterOneHealth.Died -= OnOneDied;
+        fighterTwoHealth.Died -= OnTwoDied;
 
         IsGameOver = true;
         WinnerID = winnerID;
-        OnGameOver?.Invoke();
+        DidGameOver?.Invoke();
     }    
 }

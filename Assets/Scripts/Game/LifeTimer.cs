@@ -11,7 +11,7 @@ public class LifeTimer : MonoBehaviour, ITimable
     public float Capacity => lifeTime;
     public float Current => remainTime;
     
-    public event Action OnEnded;
+    public event Action Ended;
 
     private void Awake() => remainTime = lifeTime;
 
@@ -24,7 +24,7 @@ public class LifeTimer : MonoBehaviour, ITimable
         if (remainTime <= 0)
         {
             isEnded = true;
-            OnEnded?.Invoke();
+            Ended?.Invoke();
         }
     }
 }

@@ -5,8 +5,8 @@ public class LifeTimedDestroyer : MonoBehaviour
 {
     [SerializeField] private LifeTimer lifeTimer;
 
-    void OnEnable() => lifeTimer.OnEnded += OnTimeEnded;
-    void OnDisable() => lifeTimer.OnEnded -= OnTimeEnded;
+    void OnEnable() => lifeTimer.Ended += OnTimeEnded;
+    void OnDisable() => lifeTimer.Ended -= OnTimeEnded;
 
     private void OnTimeEnded() => Destroy(gameObject);
 }

@@ -12,7 +12,7 @@ public class ForceHandler : MonoBehaviour
     {
         foreach (var receiver in hitReceivers)
         {
-            receiver.OnForceApplied += OnForceApplied;
+            receiver.ForceApplied += OnForceApplied;
         }        
     }
 
@@ -20,7 +20,7 @@ public class ForceHandler : MonoBehaviour
     {
         foreach (var receiver in hitReceivers)
         {
-            receiver.OnForceApplied -= OnForceApplied;
+            receiver.ForceApplied -= OnForceApplied;
         }
     }
 

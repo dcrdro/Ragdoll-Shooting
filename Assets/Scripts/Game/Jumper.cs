@@ -15,7 +15,7 @@ public class Jumper : MonoBehaviour
     private bool CanJump() => IsGrounded() || HasJumps();
     private bool IsGrounded() => Physics2D.BoxCast(solidBody.CheckCollider.bounds.center, solidBody.CheckCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer).collider;
 
-    public event Action OnJumped;
+    public event Action Jumped;
 
     [ContextMenu("Jump test")]
     public bool TryJump ()
@@ -34,7 +34,7 @@ public class Jumper : MonoBehaviour
         solidBody.Stop();
         solidBody.ApplyForce(Vector2.up * jumpSpeed);
         UpdateCount();
-        OnJumped?.Invoke();
+        Jumped?.Invoke();
     }
 
     private void UpdateCount()

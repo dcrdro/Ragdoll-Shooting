@@ -10,12 +10,12 @@ public class HealthRestorer : MonoBehaviour
 
     private void OnEnable()
     {
-        SelfHealth.OnDied += OnSelfDied;
+        SelfHealth.Died += OnSelfDied;
     }
 
     private void OnDisable()
     {
-        SelfHealth.OnDied -= OnSelfDied;
+        SelfHealth.Died -= OnSelfDied;
     }
 
     private void OnSelfDied(DeathArgs deathArgs)

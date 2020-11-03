@@ -7,5 +7,5 @@ public interface IHealth : IDamagable, IHealable
     float MaxHealthAmount { get; }
     bool IsDead { get; }
 
-    event Action<DeathArgs> OnDied;
+    event Action<DeathArgs> Died;
 }

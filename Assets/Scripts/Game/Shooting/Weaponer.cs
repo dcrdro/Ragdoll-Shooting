@@ -10,7 +10,7 @@ public class Weaponer : MonoBehaviour, IOriginDerived
 
     public GameObject Origin { get; set; }
     
-    public event Action OnAppliedWeapon;
+    public event Action WeaponApplied;
 
     private void Start()
     {
@@ -21,6 +21,6 @@ public class Weaponer : MonoBehaviour, IOriginDerived
     public void ApplyWeapon()
     {
         weapon.Shoot();
-        OnAppliedWeapon?.Invoke();
+        WeaponApplied?.Invoke();
     }
 }

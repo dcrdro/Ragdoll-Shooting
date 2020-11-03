@@ -12,16 +12,16 @@ public class UIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        gameOverManager.OnGameOver += OnGameOver;
-        appManager.OnPauseGame += OnPauseGame;
-        appManager.OnResumeGame += OnResumeGame;
+        gameOverManager.DidGameOver += OnGameOver;
+        appManager.GamePaused += OnGamePaused;
+        appManager.GameResumed += OnGameResumed;
     }
 
     private void OnDisable()
     {
-        gameOverManager.OnGameOver -= OnGameOver;
-        appManager.OnPauseGame -= OnPauseGame;
-        appManager.OnResumeGame -= OnResumeGame;
+        gameOverManager.DidGameOver -= OnGameOver;
+        appManager.GamePaused -= OnGamePaused;
+        appManager.GameResumed -= OnGameResumed;
     }
 
     private void OnGameOver() => StartCoroutine(WaitForShowGameOver());
@@ -32,6 +32,6 @@ public class UIManager : MonoBehaviour
         gameOverPanel.SetActive(true);
     }
     
-    private void OnPauseGame() => pausePanel.SetActive(true);
-    private void OnResumeGame() => pausePanel.SetActive(false);
+    private void OnGamePaused() => pausePanel.SetActive(true);
+    private void OnGameResumed() => pausePanel.SetActive(false);
 }

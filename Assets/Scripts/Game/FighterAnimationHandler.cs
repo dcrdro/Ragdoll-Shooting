@@ -14,16 +14,16 @@ public class FighterAnimationHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        jumper.OnJumped += OnJumped;
-        weaponer.OnAppliedWeapon += OnAppliedWeapon;
+        jumper.Jumped += OnJumped;
+        weaponer.WeaponApplied += OnWeaponApplied;
     }
 
     private void OnDisable()
     {
-        jumper.OnJumped -= OnJumped;
-        weaponer.OnAppliedWeapon -= OnAppliedWeapon;
+        jumper.Jumped -= OnJumped;
+        weaponer.WeaponApplied -= OnWeaponApplied;
     }
 
     private void OnJumped() => animator.SetTrigger(jumpHash);
-    private void OnAppliedWeapon() => animator.SetTrigger(shootHash);
+    private void OnWeaponApplied() => animator.SetTrigger(shootHash);
 }

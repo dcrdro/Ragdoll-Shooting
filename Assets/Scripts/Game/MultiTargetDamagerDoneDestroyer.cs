@@ -10,12 +10,12 @@ public class MultiTargetDamagerDoneDestroyer : MonoBehaviour
 
     private void OnEnable()
     {
-        Damager.OnDamaged += OnDamaged;
+        Damager.Damaged += OnDamaged;
     }
 
     private void OnDisable()
     {
-        Damager.OnDamaged -= OnDamaged;
+        Damager.Damaged -= OnDamaged;
     }
 
     private void OnDamaged(IEnumerable<IDamagable> damagables)
