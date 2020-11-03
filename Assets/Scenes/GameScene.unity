@@ -174,14 +174,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 252448044, guid: 21d0db5eec87bfe489c283b240dd7c13, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 260320386, guid: 21d0db5eec87bfe489c283b240dd7c13, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 660185150, guid: 21d0db5eec87bfe489c283b240dd7c13, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -190,10 +182,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1908386386, guid: 21d0db5eec87bfe489c283b240dd7c13, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 368667953022116472, guid: 21d0db5eec87bfe489c283b240dd7c13,
+        type: 3}
+      propertyPath: appManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7750598890642653894}
     - target: {fileID: 548859371182717517, guid: 21d0db5eec87bfe489c283b240dd7c13,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -214,16 +207,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 936759051336300411, guid: 21d0db5eec87bfe489c283b240dd7c13,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1317740055909943703, guid: 21d0db5eec87bfe489c283b240dd7c13,
         type: 3}
       propertyPath: gameOverManager
       value: 
       objectReference: {fileID: 7750598890642653893}
+    - target: {fileID: 1317740055909943703, guid: 21d0db5eec87bfe489c283b240dd7c13,
+        type: 3}
+      propertyPath: appManager
+      value: 
+      objectReference: {fileID: 7750598890642653894}
     - target: {fileID: 2509404182060468714, guid: 21d0db5eec87bfe489c283b240dd7c13,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -239,6 +232,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3095015468839004406, guid: 21d0db5eec87bfe489c283b240dd7c13,
+        type: 3}
+      propertyPath: appManager
+      value: 
+      objectReference: {fileID: 7750598890642653894}
     - target: {fileID: 4190371483485158709, guid: 21d0db5eec87bfe489c283b240dd7c13,
         type: 3}
       propertyPath: health
@@ -339,6 +337,11 @@ PrefabInstance:
       propertyPath: gameOverManager
       value: 
       objectReference: {fileID: 7750598890642653893}
+    - target: {fileID: 7201364868247185812, guid: 21d0db5eec87bfe489c283b240dd7c13,
+        type: 3}
+      propertyPath: appManager
+      value: 
+      objectReference: {fileID: 7750598890642653894}
     - target: {fileID: 7535562530442906030, guid: 21d0db5eec87bfe489c283b240dd7c13,
         type: 3}
       propertyPath: weaponer
@@ -1192,5 +1195,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ab1782e4dc04e0291ae79ca1e32819a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7750598890642653894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1462538336471197565, guid: 8229c606d5a28864bb6326dca9c17465,
+    type: 3}
+  m_PrefabInstance: {fileID: 7750598890642653892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306246f1be8349d0beede03e5a14b06e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

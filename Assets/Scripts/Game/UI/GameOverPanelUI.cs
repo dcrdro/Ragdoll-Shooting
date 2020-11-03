@@ -3,8 +3,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameOverUI : UIBase
+public class GameOverPanelUI : UIBase
 {
+    [SerializeField] private AppManager appManager;
     [SerializeField] private GameOverManager gameOverManager;
     [SerializeField] private FighterConfigMapper fighterConfigMapper;
     [SerializeField] private Text winnerText;
@@ -14,4 +15,7 @@ public class GameOverUI : UIBase
         string playerName = fighterConfigMapper[gameOverManager.WinnerID].Name;
         winnerText.text = $"{playerName} won!";
     }
+
+    // UI Event
+    public void OnRestart() => appManager.RestartGame();
 }
