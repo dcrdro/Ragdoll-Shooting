@@ -40,7 +40,6 @@ namespace Game.Fighting.Health
             HealthAmount += amount;
             HealthAmount = Mathf.Clamp(HealthAmount, 0, healthMax);
 
-            print("update health: " + HealthAmount);
             if (HealthAmount <= 0)
             {
                 Died?.Invoke(new DeathArgs(origin, dealer));

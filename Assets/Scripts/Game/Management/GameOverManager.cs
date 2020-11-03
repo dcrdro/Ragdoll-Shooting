@@ -43,8 +43,6 @@ namespace Game.Management
 
         private void SetGameOver(FighterID winnerID)
         {
-            print("winner: " + winnerID);
-        
             fighterOneHealth.Died -= OnOneDied;
             fighterTwoHealth.Died -= OnTwoDied;
 

@@ -36,7 +36,6 @@ namespace Game.Fighting.Handlers
         
             var bone = receiver.GetComponent<RagdollBone>();
             bone.ApplyForce(totalForce);
-            print("on force received: " + hitboxId + ", " + totalForce);
         }
     }
 }

@@ -36,7 +36,6 @@ namespace Game.Fighting.Handlers
             HitboxID hitboxId = ((HitReceiver) source).HitboxID;
             float totalDamage = args.Damage * hitboxMapper[hitboxId].DamageMultiplier;
             Health.TakeDamage(new DamageArgs(args.Origin, args.Dealer, totalDamage));
-            print("on hit received: " + totalDamage + ", " + hitboxId);
         }
     }
 }
