@@ -999,6 +999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverManager: {fileID: 0}
+  fighterConfigMapper: {fileID: 11400000, guid: 09c562e298df9d7479ae9b7ef2bcf8a4,
+    type: 2}
   winnerText: {fileID: 1038750438}
 --- !u!1 &393004349925972469
 GameObject:
