@@ -1,16 +1,22 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 namespace Core.Effects
 {
-    public abstract class EffectorBase : MonoBehaviour
+    public abstract class EffectorBase<T> : MonoBehaviour where T : struct, IEffectArgs
     {
-        public EffectBase[] effects;
+        [SerializeField] private MonoBehaviour[] _effects; // as IEffect
+        
+        private IEnumerable<EffectBase<T>> effects;
 
-        protected void PlayEffects()
+        private void Awake() => effects = _effects.OfType<EffectBase<T>>();
+
+        protected void PlayEffects(in T args)
         {
             foreach (var effect in effects)
             {
-                effect.Play();
+                effect.Play(args);
             }
         }
     }
