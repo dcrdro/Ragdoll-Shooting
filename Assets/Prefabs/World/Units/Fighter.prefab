@@ -2067,12 +2067,12 @@ GameObject:
   - component: {fileID: 3482695706528470736}
   - component: {fileID: 1956465347061860019}
   m_Layer: 15
-  m_Name: Body collider
+  m_Name: _[?]_Body collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6180429195984108003
 Transform:
   m_ObjectHideFlags: 0
