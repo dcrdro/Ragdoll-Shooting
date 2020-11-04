@@ -7,10 +7,25 @@ TextureImporter:
     second: body
   - first:
       213: -5933809605346213105
-    second: part
+    second: hand
   - first:
       213: -1862028175464937795
-    second: part
+    second: hand
+  - first:
+      213: -1862028175464937795
+    second: up_leg
+  - first:
+      213: 2165717997959944645
+    second: arm
+  - first:
+      213: -484125075312390652
+    second: head
+  - first:
+      213: 1680153710358747874
+    second: down_leg
+  - first:
+      213: -773472422378511668
+    second: fist
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -110,12 +125,12 @@ TextureImporter:
       name: body
       rect:
         serializedVersion: 2
-        x: 11
-        y: 78
-        width: 105
-        height: 175
-      alignment: 9
-      pivot: {x: 0.49672827, y: 0.04457476}
+        x: 3
+        y: 87
+        width: 102
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -128,15 +143,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: part
+      name: hand
       rect:
         serializedVersion: 2
-        x: 194
-        y: 4
-        width: 42
-        height: 123
-      alignment: 9
-      pivot: {x: 0.5245379, y: 0.95804256}
+        x: 220
+        y: 157
+        width: 30
+        height: 96
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -149,15 +164,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: head
+      name: up_leg
       rect:
         serializedVersion: 2
-        x: 130
-        y: 143
-        width: 106
-        height: 108
-      alignment: 9
-      pivot: {x: 0.5, y: 0.12147861}
+        x: 172
+        y: 19
+        width: 39
+        height: 77
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,6 +180,90 @@ TextureImporter:
       bones: []
       spriteID: db6c4a76d3fb826e0800000000000000
       internalID: -1862028175464937795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arm
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 51
+        width: 30
+        height: 96
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c992107b0d2e0e10800000000000000
+      internalID: 2165717997959944645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: head
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 159
+        width: 94
+        height: 94
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40e452b1fca0849f0800000000000000
+      internalID: -484125075312390652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: down_leg
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 19
+        width: 30
+        height: 77
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eadcf1d5ea115710800000000000000
+      internalID: 1680153710358747874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fist
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 5
+        width: 30
+        height: 20
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2619c0ee21445f0800000000000000
+      internalID: -773472422378511668
       vertices: []
       indices: 
       edges: []
