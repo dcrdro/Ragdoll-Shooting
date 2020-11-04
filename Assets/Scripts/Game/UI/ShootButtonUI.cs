@@ -1,9 +1,14 @@
-﻿using UnityEngine;
+﻿using Core.UI;
+using Game.Fighting.Shooting;
+using UnityEngine;
 
-public class ShootButtonUI : UIBase
+namespace Game.UI
 {
-    [SerializeField] private Weaponer weaponer;
+    public class ShootButtonUI : UIBase
+    {
+        [SerializeField] private Weaponer weaponer;
     
-    // UI Event
-    public void OnShoot() => weaponer.ApplyWeapon();
+        // UI Event
+        public void OnShoot() => weaponer.ApplyWeapon();
+    }
 }

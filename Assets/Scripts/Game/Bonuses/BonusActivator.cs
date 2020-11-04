@@ -1,30 +1,37 @@
-﻿using UnityEngine;
+﻿using Core.Fighting;
+using Core.Fighting.Args;
+using Core.General;
+using Game.Fighting.Health;
+using UnityEngine;
 
-public class BonusActivator : MonoBehaviour
+namespace Game.Bonuses
 {
-    [SerializeField] private Health selfHealth; // rework
-    [SerializeField] private GameObject bonusPrefab;
-
-    private IHealth SelfHealth => (IHealth) selfHealth;
-
-    private void OnEnable()
+    public class BonusActivator : MonoBehaviour
     {
-        SelfHealth.OnDied += OnSelfDied;
-    }
+        [SerializeField] private Health selfHealth; // rework
+        [SerializeField] private GameObject bonusPrefab;
 
-    private void OnDisable()
-    {
-        SelfHealth.OnDied -= OnSelfDied;
-    }
+        private IHealth SelfHealth => (IHealth) selfHealth;
 
-    private void OnSelfDied(DeathArgs deathArgs)
-    {
-        GameObject bonusTarget = deathArgs.Origin;
-        if (bonusTarget.TryGetComponent<IAttachmentHolder>(out var attachmentHolder))
+        private void OnEnable()
         {
-            var instance = Instantiate(bonusPrefab, attachmentHolder.Holder);
-            instance.transform.localPosition = Vector3.zero;
+            SelfHealth.Died += OnSelfDied;
         }
-        Destroy(gameObject);
-    }    
+
+        private void OnDisable()
+        {
+            SelfHealth.Died -= OnSelfDied;
+        }
+
+        private void OnSelfDied(DeathArgs deathArgs)
+        {
+            GameObject bonusTarget = deathArgs.Origin;
+            if (bonusTarget.TryGetComponent<IAttachmentHolder>(out var attachmentHolder))
+            {
+                var instance = Instantiate(bonusPrefab, attachmentHolder.Holder);
+                instance.transform.localPosition = Vector3.zero;
+            }
+            Destroy(gameObject);
+        }    
+    }
 }

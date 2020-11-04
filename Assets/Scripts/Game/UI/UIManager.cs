@@ -1,37 +1,41 @@
 ﻿using System.Collections;
+using Game.Management;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+namespace Game.UI
 {
-    [SerializeField] private AppManager appManager;
-    [SerializeField] private GameOverManager gameOverManager;
+    public class UIManager : MonoBehaviour
+    {
+        [SerializeField] private AppManager appManager;
+        [SerializeField] private GameOverManager gameOverManager;
     
-    [Header("Panels")]
-    [SerializeField] private GameObject gameOverPanel;
-    [SerializeField] private GameObject pausePanel;
+        [Header("Panels")]
+        [SerializeField] private GameObject gameOverPanel;
+        [SerializeField] private GameObject pausePanel;
 
-    private void OnEnable()
-    {
-        gameOverManager.OnGameOver += OnGameOver;
-        appManager.OnPauseGame += OnPauseGame;
-        appManager.OnResumeGame += OnResumeGame;
-    }
+        private void OnEnable()
+        {
+            gameOverManager.DidGameOver += OnGameOver;
+            appManager.GamePaused += OnGamePaused;
+            appManager.GameResumed += OnGameResumed;
+        }
 
-    private void OnDisable()
-    {
-        gameOverManager.OnGameOver -= OnGameOver;
-        appManager.OnPauseGame -= OnPauseGame;
-        appManager.OnResumeGame -= OnResumeGame;
-    }
+        private void OnDisable()
+        {
+            gameOverManager.DidGameOver -= OnGameOver;
+            appManager.GamePaused -= OnGamePaused;
+            appManager.GameResumed -= OnGameResumed;
+        }
 
-    private void OnGameOver() => StartCoroutine(WaitForShowGameOver());
+        private void OnGameOver() => StartCoroutine(WaitForShowGameOver());
 
-    private IEnumerator WaitForShowGameOver()
-    {
-        yield return new WaitForSeconds(1f);
-        gameOverPanel.SetActive(true);
-    }
+        private IEnumerator WaitForShowGameOver()
+        {
+            yield return new WaitForSeconds(1f);
+            gameOverPanel.SetActive(true);
+        }
     
-    private void OnPauseGame() => pausePanel.SetActive(true);
-    private void OnResumeGame() => pausePanel.SetActive(false);
+        private void OnGamePaused() => pausePanel.SetActive(true);
+        private void OnGameResumed() => pausePanel.SetActive(false);
+    }
 }

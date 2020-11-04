@@ -1,18 +1,22 @@
-﻿using System;
+﻿using Core.General;
+using Core.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LifetimeUI : UIBase
+namespace Game.UI
 {
-    [SerializeField] private MonoBehaviour timable; // as ITimable
-    
-    [SerializeField] private Image timeImage;
-
-    private ITimable Timable => (ITimable) timable;
-
-    private void Update()
+    public class LifetimeUI : UIBase
     {
-        float part = Timable.Current / Timable.Capacity;
-        timeImage.fillAmount = part;
+        [SerializeField] private MonoBehaviour timable; // as ITimable
+    
+        [SerializeField] private Image timeImage;
+
+        private ITimable Timable => (ITimable) timable;
+
+        private void Update()
+        {
+            float part = Timable.Current / Timable.Capacity;
+            timeImage.fillAmount = part;
+        }
     }
 }

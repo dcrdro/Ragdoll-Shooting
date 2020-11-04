@@ -1931,7 +1931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverManager: {fileID: 0}
-  unitController: {fileID: 0}
+  fighterController: {fileID: 0}
 --- !u!114 &6196206268536245879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2323,9 +2323,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f8a71decd64e943b6dc83094108428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7847659887237165884, guid: 4913ee44d6c52864a97a41f149f75d16, type: 3}
+  projectile: {fileID: 7847659887237165884, guid: 4913ee44d6c52864a97a41f149f75d16,
+    type: 3}
   shootPoint: {fileID: 8364697811918813347}
-  bulletSpeed: 200
+  projectileSpeed: 200
 --- !u!1 &7074141621283506820
 GameObject:
   m_ObjectHideFlags: 0

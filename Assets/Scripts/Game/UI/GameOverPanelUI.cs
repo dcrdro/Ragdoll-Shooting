@@ -1,21 +1,25 @@
-﻿using System;
-using System.Collections;
+﻿using Core.UI;
+using Game.Management;
+using Game.Player;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameOverPanelUI : UIBase
+namespace Game.UI
 {
-    [SerializeField] private AppManager appManager;
-    [SerializeField] private GameOverManager gameOverManager;
-    [SerializeField] private FighterConfigMapper fighterConfigMapper;
-    [SerializeField] private Text winnerText;
-
-    private void OnEnable()
+    public class GameOverPanelUI : UIBase
     {
-        string playerName = fighterConfigMapper[gameOverManager.WinnerID].Name;
-        winnerText.text = $"{playerName} won!";
-    }
+        [SerializeField] private AppManager appManager;
+        [SerializeField] private GameOverManager gameOverManager;
+        [SerializeField] private FighterConfigMapper fighterConfigMapper;
+        [SerializeField] private Text winnerText;
 
-    // UI Event
-    public void OnRestart() => appManager.RestartGame();
+        private void OnEnable()
+        {
+            string playerName = fighterConfigMapper[gameOverManager.WinnerID].Name;
+            winnerText.text = $"{playerName} won!";
+        }
+
+        // UI Event
+        public void OnRestart() => appManager.RestartGame();
+    }
 }

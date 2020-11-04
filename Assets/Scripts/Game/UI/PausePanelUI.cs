@@ -1,10 +1,15 @@
-﻿using UnityEngine;
+﻿using Core.UI;
+using Game.Management;
+using UnityEngine;
 
-public class PausePanelUI : UIBase
+namespace Game.UI
 {
-    [SerializeField] private AppManager appManager;
+    public class PausePanelUI : UIBase
+    {
+        [SerializeField] private AppManager appManager;
     
-    // UI Event
-    public void OnResume() => appManager.UnpauseGame();
-    public void OnRestart() => appManager.RestartGame();
+        // UI Event
+        public void OnResume() => appManager.UnpauseGame();
+        public void OnRestart() => appManager.RestartGame();
+    }
 }
