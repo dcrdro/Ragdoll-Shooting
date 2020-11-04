@@ -524,7 +524,7 @@ PrefabInstance:
     - target: {fileID: 2394174157082038088, guid: bafd274955b480648a9bd8c11bbc6abd,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 1.75
+      value: 1.647
       objectReference: {fileID: 0}
     - target: {fileID: 2394174157082038088, guid: bafd274955b480648a9bd8c11bbc6abd,
         type: 3}
@@ -616,36 +616,6 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: 1.5089998
       objectReference: {fileID: 0}
-    - target: {fileID: 3609292881817533779, guid: bafd274955b480648a9bd8c11bbc6abd,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.border.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3609292881817533779, guid: bafd274955b480648a9bd8c11bbc6abd,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.border.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3609292881817533779, guid: bafd274955b480648a9bd8c11bbc6abd,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.border.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3609292881817533779, guid: bafd274955b480648a9bd8c11bbc6abd,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.border.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3609292881817533779, guid: bafd274955b480648a9bd8c11bbc6abd,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 22.00179
-      objectReference: {fileID: 0}
-    - target: {fileID: 3609292881817533779, guid: bafd274955b480648a9bd8c11bbc6abd,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 4004045281487636798, guid: bafd274955b480648a9bd8c11bbc6abd,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -669,7 +639,7 @@ PrefabInstance:
     - target: {fileID: 4134065164217546855, guid: bafd274955b480648a9bd8c11bbc6abd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 44.620003
+      value: 29.062002
       objectReference: {fileID: 0}
     - target: {fileID: 4365305545745765463, guid: bafd274955b480648a9bd8c11bbc6abd,
         type: 3}
