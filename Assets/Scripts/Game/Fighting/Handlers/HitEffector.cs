@@ -33,7 +33,9 @@ namespace Game.Fighting.Handlers
         private void OnDamageTaken(IDamagable source, DamageArgs args)
         {
             HitReceiver receiver = (HitReceiver) source;
-            PositionedArgs effectArgs = new PositionedArgs(receiver.transform.position, Quaternion.identity);
+            float angle = Vector3.Angle(args.Dealer.transform.position, receiver.transform.position);
+            var inverseRotation = Quaternion.Euler(0, 0, angle - 180);
+            PositionedArgs effectArgs = new PositionedArgs(receiver.transform.position,  inverseRotation);
             PlayEffects(effectArgs);
         }
     }

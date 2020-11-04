@@ -9,7 +9,8 @@ namespace Game.Effects
     
         public override void Play(in PositionedArgs args)
         {
-            effect.transform.SetPositionAndRotation(args.Position, args.Rotation);
+            effect.transform.position = args.Position;
+            effect.transform.localRotation = args.Rotation;
             effect.Play(EmptyArgs.Empty);
         }
     }
