@@ -1,7 +1,7 @@
 ﻿namespace Core.Effects
 {
-    public interface IEffect
+    public interface IEffect<T> where T : struct, IEffectArgs
     {
-        void Play();
+        void Play(in T args);
     }
 }

@@ -1,12 +1,11 @@
-﻿using Core.Effects;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game.Effects
 {
-    public class ParticlesEffect : EffectBase
+    public class ParticlesEffect : EmptyEffect
     {
         [SerializeField] private ParticleSystem particleSystem;
     
-        public override void Play() => particleSystem.Play();
+        public override void Play(in EmptyArgs args) => particleSystem.Play();
     }
 }

@@ -1,12 +1,11 @@
-﻿using Core.Effects;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game.Effects
 {
-    public class SoundEffect : EffectBase
+    public class SoundEffect : EmptyEffect
     {
         [SerializeField] private AudioSource audioSource;
     
-        public override void Play() => audioSource.Play();
+        public override void Play(in EmptyArgs args) => audioSource.Play();
     }
 }
