@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &804281318472741078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810915683687805923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77d70be7f1a84910beb55f73b99941bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particleSystem: {fileID: 3155651098217964062}
 --- !u!114 &301580346424971420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,6 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effect: {fileID: 804281318472741078}
   delay: 3
+--- !u!114 &804281318472741078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810915683687805923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d70be7f1a84910beb55f73b99941bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 3155651098217964062}
 --- !u!114 &8847423224107425365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,6 +766,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1311909391535201597, guid: 240739a9711c1864ebe106c212bfb990,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3982
+      objectReference: {fileID: 0}
+    - target: {fileID: 1311909391535201597, guid: 240739a9711c1864ebe106c212bfb990,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3982
+      objectReference: {fileID: 0}
+    - target: {fileID: 1311909391535201597, guid: 240739a9711c1864ebe106c212bfb990,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3982
       objectReference: {fileID: 0}
     - target: {fileID: 6460202381170831084, guid: 240739a9711c1864ebe106c212bfb990,
         type: 3}
