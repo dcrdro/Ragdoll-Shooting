@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Core.General;
 using Game.Fighting.Hitboxes;
@@ -24,6 +25,10 @@ namespace Game.Fighting.Damagers
 
         public LayerMask ExplosionLayer => explosionLayer;
 
+        public Transform ExplosionPoint => explosionPoint;
+
+        public event Action Exploded;
+
         public void Explode()
         {
             IEnumerable<HitReceiver> receivers = Physics2D.OverlapCircleAll(explosionPoint.position, explosionRadius, explosionLayer)
@@ -32,6 +37,7 @@ namespace Game.Fighting.Damagers
 
             SwitchRagdoll(receivers);
             ApplyHit(receivers);
+            Exploded?.Invoke();
         }
 
         private static void SwitchRagdoll(IEnumerable<HitReceiver> receivers)
