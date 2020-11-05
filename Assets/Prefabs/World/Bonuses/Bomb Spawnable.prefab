@@ -13,6 +13,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 3155651098217964062}
+--- !u!114 &301580346424971420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810915683687805923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1eed5d6fcbc47a7bb91a58fd25ef2e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 804281318472741078}
+  delay: 3
 --- !u!114 &8847423224107425365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b0507a97864bb2a4f21cd7cd996dc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 804281318472741078}
+  effect: {fileID: 301580346424971420}
 --- !u!1 &2310308077454553661
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +189,7 @@ GameObject:
   - component: {fileID: 787140875132519428}
   - component: {fileID: 3642940584137310950}
   - component: {fileID: 1602453147371417218}
+  - component: {fileID: 4365384967589473865}
   - component: {fileID: 1142973072492992106}
   m_Layer: 0
   m_Name: Explosion Sound
@@ -306,6 +321,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 3642940584137310950}
+--- !u!114 &4365384967589473865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2878332559281102720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1eed5d6fcbc47a7bb91a58fd25ef2e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 1602453147371417218}
+  delay: 3
 --- !u!114 &1142973072492992106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b0507a97864bb2a4f21cd7cd996dc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 1602453147371417218}
+  effect: {fileID: 4365384967589473865}
 --- !u!1 &2917593908621968314
 GameObject:
   m_ObjectHideFlags: 0
