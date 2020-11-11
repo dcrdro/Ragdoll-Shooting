@@ -17,8 +17,6 @@ namespace Game.Fighting.Damagers
         {
             if (collider.TryGetComponent<IForceable>(out var forceable))
             {
-                
-                print("apply force: " + collider.name);
                 Forcer.Force(forceable);
             }
         }
