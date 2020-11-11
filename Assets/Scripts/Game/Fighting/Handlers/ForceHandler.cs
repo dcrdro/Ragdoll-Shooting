@@ -1,4 +1,5 @@
 ﻿using Core.Fighting;
+using Core.Fighting.Args;
 using Game.Fighting.Hitboxes;
 using Game.Physics;
 using UnityEngine;
@@ -28,14 +29,14 @@ namespace Game.Fighting.Handlers
             }
         }
 
-        private void OnForceApplied(IForceable source, Vector3 force)
+        private void OnForceApplied(IForceable source, ForceArgs args)
         {
             HitReceiver receiver = (HitReceiver)source;
             HitboxID hitboxId = receiver.HitboxID;
-            Vector3 totalForce = force * hitboxMapper[hitboxId].ForceMultiplier;
+            Vector3 totalForce = args.Force * hitboxMapper[hitboxId].ForceMultiplier;
         
             var bone = receiver.GetComponent<RagdollBone>();
-            bone.ApplyForce(totalForce);
+            bone.ApplyForce(new ForceArgs(args.Origin, args.Dealer, totalForce));
         }
     }
 }

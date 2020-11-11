@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.Fighting.Args;
 using Core.General;
 using Game.Fighting.Hitboxes;
 using Game.Physics;
@@ -74,7 +75,7 @@ namespace Game.Fighting.Damagers
                 Vector3 distance = receiver.transform.position - explosionPoint.position;
                 float powerMultiplier = Mathf.InverseLerp(explosionRadius, minExplosionRadius, distance.magnitude); // make via curve ?
                 Vector3 force = distance.normalized * powerMultiplier * explosionVelocity;
-                receiver.ApplyForce(force);
+                receiver.ApplyForce(new ForceArgs(Origin, gameObject, force));
             }
         }
 

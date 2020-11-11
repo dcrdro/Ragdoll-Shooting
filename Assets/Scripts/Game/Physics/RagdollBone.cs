@@ -1,5 +1,6 @@
 ﻿using System;
 using Core.Fighting;
+using Core.Fighting.Args;
 using UnityEngine;
 
 namespace Game.Physics
@@ -9,7 +10,7 @@ namespace Game.Physics
         [SerializeField] private Rigidbody2D boneRigidbody;
         [SerializeField] private HingeJoint2D boneJoint;
 
-        public event Action<IForceable, Vector3> ForceApplied;
+        public event Action<IForceable, ForceArgs> ForceApplied;
 
         public void Activate()
         {
@@ -23,10 +24,10 @@ namespace Game.Physics
             if (boneJoint) boneJoint.enabled = false;
         }
 
-        public void ApplyForce(Vector3 force)
+        public void ApplyForce(ForceArgs args)
         {
-            boneRigidbody.AddForce(force);
-            ForceApplied?.Invoke(this, force);
+            boneRigidbody.AddForce(args.Force);
+            ForceApplied?.Invoke(this, args);
         }
 
         public void Stop() => boneRigidbody.velocity = Vector2.zero;

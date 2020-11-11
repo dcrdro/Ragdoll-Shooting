@@ -12,11 +12,11 @@ namespace Game.Fighting.Hitboxes
         public HitboxID HitboxID => hitboxID;
 
         public event Action<IDamagable, DamageArgs> DamageTaken;
-        public event Action<IForceable, Vector3> ForceApplied;
+        public event Action<IForceable, ForceArgs> ForceApplied;
 
         public void TakeDamage(DamageArgs args) => DamageTaken?.Invoke(this, args);
 
-        public void ApplyForce(Vector3 force) => ForceApplied?.Invoke(this, force);
+        public void ApplyForce(ForceArgs args) => ForceApplied?.Invoke(this, args);
         public void Stop() { }
     }
 }

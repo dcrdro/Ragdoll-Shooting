@@ -1,4 +1,6 @@
-﻿using Core.Interacting;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Core.Interacting;
 using UnityEngine;
 
 namespace Game.Interacting
@@ -6,9 +8,11 @@ namespace Game.Interacting
     public class Triggerer : MonoBehaviour
     {
         [SerializeField] private TriggerSender2D trigger;
-        [SerializeField] private MonoBehaviour triggerable; // as ITriggerable
+        [SerializeField] private MonoBehaviour[] triggerables; // as ITriggerable
 
-        private ITriggerable Triggerable => (ITriggerable) triggerable;
+        private IEnumerable<ITriggerable> Triggerables;
+        
+        private void Awake() => Triggerables = triggerables.OfType<ITriggerable>();
 
         void OnEnable()
         {
@@ -22,9 +26,11 @@ namespace Game.Interacting
 
         private void OnEnter(Collider2D collider)
         {
-            if ((Triggerable.TriggerableLayer & 1 << collider.gameObject.layer) > 0)
-
-                Triggerable.OnTrigger(collider);
+            foreach (var triggerable in Triggerables)
+            {
+                if ((triggerable.TriggerableLayer & 1 << collider.gameObject.layer) > 0)
+                    triggerable.OnTrigger(collider);
+            }
         }
     }
 }
