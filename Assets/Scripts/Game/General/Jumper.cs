@@ -1,4 +1,5 @@
 ﻿using System;
+using Core.Fighting.Args;
 using Game.Physics;
 using UnityEngine;
 
@@ -35,7 +36,7 @@ namespace Game.General
         private void PerformJump()
         {
             solidBody.Stop();
-            solidBody.ApplyForce(Vector2.up * jumpSpeed);
+            solidBody.ApplyForce(new ForceArgs(null, null, Vector2.up * jumpSpeed));
             UpdateCount();
             Jumped?.Invoke();
         }

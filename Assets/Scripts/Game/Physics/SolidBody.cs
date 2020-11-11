@@ -1,5 +1,6 @@
 ﻿using System;
 using Core.Fighting;
+using Core.Fighting.Args;
 using UnityEngine;
 
 namespace Game.Physics
@@ -11,14 +12,14 @@ namespace Game.Physics
         [SerializeField] private Rigidbody2D solidRigidbody;
         [SerializeField] private Collider2D checkCollider;
 
-        public event Action<IForceable, Vector3> ForceApplied;
+        public event Action<IForceable, ForceArgs> ForceApplied;
 
         public Collider2D CheckCollider => checkCollider;
 
-        public void ApplyForce(Vector3 force)
+        public void ApplyForce(ForceArgs args)
         {
-            solidRigidbody.AddForce(force);
-            ForceApplied?.Invoke(this, force);
+            solidRigidbody.AddForce(args.Force);
+            ForceApplied?.Invoke(this, args);
         }
 
         public void Stop() => solidRigidbody.velocity = Vector2.zero;

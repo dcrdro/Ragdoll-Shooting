@@ -5,6 +5,7 @@
         None = 0,
         Head,
         Body,
-        Legs
+        Legs,
+        Hands,
     }
 }

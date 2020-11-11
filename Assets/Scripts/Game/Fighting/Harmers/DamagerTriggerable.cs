@@ -1,4 +1,4 @@
-﻿using Core.Fighting;
+using Core.Fighting;
 using Core.Interacting;
 using UnityEngine;
 
@@ -8,7 +8,7 @@ namespace Game.Fighting.Damagers
     {
         [SerializeField] private MonoBehaviour damager; // rework
         [SerializeField] private LayerMask damageMask;
-    
+
         private IDamager Damager => (IDamager) damager;
 
         public LayerMask TriggerableLayer => damageMask;

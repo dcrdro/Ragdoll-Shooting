@@ -9,6 +9,10 @@ namespace Game.Fighting.Shooting
     
         public GameObject Origin { get; set; }
 
-        public void Launch(Vector3 velocity) => bulletRigidbody.AddForce(velocity);
+        public void Launch(Vector3 velocity)
+        {
+            transform.right = velocity;
+            bulletRigidbody.AddForce(velocity);
+        }
     }
 }

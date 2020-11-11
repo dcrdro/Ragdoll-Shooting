@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5970ace6a9422b346a3400f1d20476f3, type: 3}
   m_Name: Hitbox Config Mapper
   m_EditorClassIdentifier: Assembly-CSharp::HitboxConfigMapper
-  mapperKeys: 010000000200000003000000
+  mapperKeys: 01000000020000000300000004000000
   mapperValues:
   - DamageMultiplier: 2
     ForceMultiplier: 1.25
@@ -20,3 +20,5 @@ MonoBehaviour:
     ForceMultiplier: 1
   - DamageMultiplier: 0.5
     ForceMultiplier: 2
+  - DamageMultiplier: 0
+    ForceMultiplier: 1

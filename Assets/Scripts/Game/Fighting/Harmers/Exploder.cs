@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.Fighting.Args;
 using Core.General;
 using Game.Fighting.Hitboxes;
 using Game.Physics;
@@ -10,13 +11,14 @@ namespace Game.Fighting.Damagers
 {
     public class Exploder : MonoBehaviour, IOriginDerived
     {
-        private const int minExplosionRadius = 4;
+        private const float minExplosionRadiusMultiplier = 0.75f;
     
         [Header("Explosion")]
         [SerializeField] private LayerMask explosionLayer;
         [SerializeField] private Transform explosionPoint;
+        [SerializeField, Tooltip("For more realistic explosion")] private Vector3 explosionPointOffset;
         [SerializeField] private float explosionRadius;
-        [SerializeField] private Vector2 explosionVelocity;
+        [SerializeField] private float explosionVelocity;
 
         [Header("Damager")]
         [SerializeField] private ExplosionDamager explosionDamager;
@@ -71,10 +73,11 @@ namespace Game.Fighting.Damagers
         {
             foreach (var receiver in receivers)
             {
-                Vector3 distance = receiver.transform.position - explosionPoint.position;
-                float powerMultiplier = Mathf.InverseLerp(explosionRadius, minExplosionRadius, distance.magnitude); // make via curve ?
-                Vector3 force = distance.normalized * powerMultiplier * explosionVelocity;
-                receiver.ApplyForce(force);
+                Vector3 distance = receiver.transform.position - (explosionPoint.position + explosionPointOffset);
+                float minRadius = minExplosionRadiusMultiplier * explosionRadius;
+                float powerMultiplier = Mathf.InverseLerp(explosionRadius, minRadius, distance.magnitude); // make via curve ?
+                Vector3 force = distance.normalized * (powerMultiplier * explosionVelocity);
+                receiver.ApplyForce(new ForceArgs(Origin, gameObject, force));
             }
         }
 
@@ -83,6 +86,7 @@ namespace Game.Fighting.Damagers
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(explosionPoint.position, explosionRadius);
+            Gizmos.DrawWireSphere(explosionPoint.position + explosionPointOffset, 0.1f); // explosion real point
             Gizmos.color = Color.white;
         }
 #endif
