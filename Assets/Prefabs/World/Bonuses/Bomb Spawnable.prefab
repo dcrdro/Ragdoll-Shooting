@@ -154,7 +154,7 @@ MonoBehaviour:
   explosionPoint: {fileID: 821157370965886936}
   explosionPointOffset: {x: 0, y: -2.93, z: 0}
   explosionRadius: 6.77
-  explosionVelocity: 1000
+  explosionVelocity: 800
   explosionDamager: {fileID: 6831745118620344614}
 --- !u!114 &6831745118620344614
 MonoBehaviour:
@@ -819,6 +819,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Explosion Effect
       objectReference: {fileID: 0}
+    - target: {fileID: 6460202381170831084, guid: 240739a9711c1864ebe106c212bfb990,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 240739a9711c1864ebe106c212bfb990, type: 3}
 --- !u!1 &1810915683687805923 stripped
@@ -855,6 +860,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Time Fill
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048205766769799330, guid: 9ffec515aa071d3479d25dab4d3d6619,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8221014613869301080, guid: 9ffec515aa071d3479d25dab4d3d6619,
         type: 3}
