@@ -177,7 +177,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 5146167697456509919}
-  m_BreakForce: 400
+  m_BreakForce: 1800
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -204,6 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRigidbody: {fileID: 4507430671386859020}
   boneJoint: {fileID: 4462805379355420383}
+  boneCollider: {fileID: 7647045689491488638}
 --- !u!114 &4404895686281782988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,6 +396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRigidbody: {fileID: 4891432886463893535}
   boneJoint: {fileID: 0}
+  boneCollider: {fileID: 8539178879704198684}
 --- !u!1 &1216575638628212509
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +543,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 3432545021142877901}
-  m_BreakForce: 400
+  m_BreakForce: 1800
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -594,6 +596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRigidbody: {fileID: 1496555525616463374}
   boneJoint: {fileID: 3531433412048865226}
+  boneCollider: {fileID: 5518664821565690006}
 --- !u!1 &1266695118803767511
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,7 +743,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 4875987750328684696}
-  m_BreakForce: 400
+  m_BreakForce: 1800
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -793,6 +796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRigidbody: {fileID: 3002774349653391380}
   boneJoint: {fileID: 6886362321397562357}
+  boneCollider: {fileID: 2801137962030865790}
 --- !u!1 &1953181856172376129
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +944,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 4891432886463893535}
-  m_BreakForce: 400
+  m_BreakForce: 1800
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -993,6 +997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRigidbody: {fileID: 4875987750328684696}
   boneJoint: {fileID: 3957122982755761078}
+  boneCollider: {fileID: 7303835635406343663}
 --- !u!1 &1983821456085598365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1144,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 4891432886463893535}
-  m_BreakForce: 400
+  m_BreakForce: 1800
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -1192,6 +1197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRigidbody: {fileID: 2939759541623656870}
   boneJoint: {fileID: 4710038041568236808}
+  boneCollider: {fileID: 6163689360285013477}
 --- !u!1 &2015623248454052997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,7 +1499,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 1869563408427826598}
-  m_BreakForce: 400
+  m_BreakForce: 1800
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -1520,6 +1526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRigidbody: {fileID: 2519831403081558886}
   boneJoint: {fileID: 5467628845407071926}
+  boneCollider: {fileID: 3945004286136662383}
 --- !u!114 &6583783851638400227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1917,7 +1924,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 4891432886463893535}
-  m_BreakForce: 400
+  m_BreakForce: 1800
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -1944,6 +1951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRigidbody: {fileID: 1820512257477128885}
   boneJoint: {fileID: 964019275423012847}
+  boneCollider: {fileID: 2568763231308243112}
 --- !u!114 &3718222621155002623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2103,7 +2111,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 4891432886463893535}
-  m_BreakForce: 400
+  m_BreakForce: 1800
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -2130,6 +2138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRigidbody: {fileID: 5146167697456509919}
   boneJoint: {fileID: 68173454199229039}
+  boneCollider: {fileID: 9005119180905344461}
 --- !u!114 &5415282048389103402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2784,7 +2793,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 4891432886463893535}
-  m_BreakForce: 400
+  m_BreakForce: 1800
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -2837,6 +2846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRigidbody: {fileID: 3432545021142877901}
   boneJoint: {fileID: 3371099633623618043}
+  boneCollider: {fileID: 5861636632853031161}
 --- !u!1 &7298072502393218512
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,7 +3023,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 4507430671386859020}
-  m_BreakForce: 400
+  m_BreakForce: 1800
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -3040,6 +3050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRigidbody: {fileID: 2277574564068691306}
   boneJoint: {fileID: 6311371279425213944}
+  boneCollider: {fileID: 3082488721484874147}
 --- !u!114 &2427751794804609302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3225,7 +3236,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 1820512257477128885}
-  m_BreakForce: 400
+  m_BreakForce: 1800
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
@@ -3252,6 +3263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRigidbody: {fileID: 1869563408427826598}
   boneJoint: {fileID: 2147771554232168779}
+  boneCollider: {fileID: 2061704802026763348}
 --- !u!114 &614553956055783542
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,6 +9,9 @@ namespace Game.Physics
     {
         [SerializeField] private Rigidbody2D boneRigidbody;
         [SerializeField] private HingeJoint2D boneJoint;
+        [SerializeField] private BoxCollider2D boneCollider;
+        
+        private Vector3 ForcePosition => transform.position + transform.up * boneCollider.size.y * 1.7f;
 
         public event Action<IForceable, ForceArgs> ForceApplied;
 
@@ -26,7 +29,7 @@ namespace Game.Physics
 
         public void ApplyForce(ForceArgs args)
         {
-            boneRigidbody.AddForce(args.Force);
+            boneRigidbody.AddForceAtPosition(args.Force, ForcePosition);
             ForceApplied?.Invoke(this, args);
         }
 

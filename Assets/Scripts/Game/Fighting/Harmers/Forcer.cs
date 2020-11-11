@@ -10,14 +10,16 @@ namespace Game.Fighting.Damagers
     {
         [SerializeField] private float force;
         [SerializeField] private Transform viewRoot;
-    
+
+        private Vector3 ForceDirection => viewRoot.right;
+        
         public event Action<IForcer> Forced;
         
         public GameObject Origin { get; set; }
 
         public void Force(IForceable forceable)
         {
-            forceable.ApplyForce(new ForceArgs(Origin, gameObject, viewRoot.right * force));
+            forceable.ApplyForce(new ForceArgs(Origin, gameObject, ForceDirection * force));
             Forced?.Invoke(this);
         }
     }
