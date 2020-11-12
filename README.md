@@ -6,21 +6,64 @@
 
 Ragdoll Shooting is a 2d side-view game, where player is fighting against bot. Shoot and avoid enemy's bullets and kill the enemy to win. Also there are some bonuses in the game, which are useful.
 
+<details>
+ <summary>Screenshot</summary>
+ 
+ ![Overview](https://github.com/dcrdro/Ragdoll-Shooting/blob/master/Assets/Documentation~/overview.png)
+ 
+</details>
+
 The purpose of this project is show how things work:
  - 2d gunfire based game
  - fighting (healh and damage) system
  - ragdoll usage
  - using of small, loosely-coupled components to create complex logic
  
- Gameplay: https://drive.google.com/file/d/1D61HuTgGZfGkGHsI5lEsF1f7sD4xVapp/view?usp=sharing
+<details>
+ <summary>Gameplay</summary>
+ 
+ ![Gameplay](https://github.com/dcrdro/Ragdoll-Shooting/blob/master/Assets/Documentation~/ragdoll-shooting-gamplay.gif)
+ 
+</details>
 
-## Structure
+*All are created by me*
+
+## Roadmap
+
+- [x] shooting
+- [x] jumps
+- [x] animation
+- [x] fight system (health + damage)
+- [x] player controller
+- [x] hitbox system
+- [x] exlosion & bomb
+- [x] healing & medical kit
+- [x] shield
+- [x] bullets
+- [x] UI system
+- [x] graphics
+- [x] effect system & fighting effects
+- [x] bonus spawner
+- [x] game management
+- [x] ragdoll balance
+- [ ] *readme documentation*
+- [ ] additional setup
+- [ ] bones configs
+- [ ] object pool
+- [ ] mvp adapting
+- [ ] import utilities from Profit package
+
+# Structure
 
 Game scene hierarchy structure is splitted into 3 global sections:
  - UI
  - World
  - Management
  
+ Here is a screenshot:
+ 
+  ![](https://github.com/dcrdro/Ragdoll-Shooting/blob/master/Assets/Documentation~/scene-hierarchy.png)
+
  ## UI
  Inner structure:
   - UI Camera
@@ -38,7 +81,11 @@ Game scene hierarchy structure is splitted into 3 global sections:
  
  In this hierarchy world objects are placed - units; environment; holders for spawnable objects.
  
- Unit prefab has 2 variants - player and enemy. They bot has many behavior components attached to them, which are defining the unit behavior. Below are the main ones.
+ Unit prefab has 2 variants - player and enemy. They both has many behavior **components attached** to them, which are defining the **unit behavior**. Below are the main ones.
+ 
+ The components look like this:
+ 
+   ![](https://github.com/dcrdro/Ragdoll-Shooting/blob/master/Assets/Documentation~/fighter-components.png)
  
  ### Physics Switcher
  It is responsible for switching unit's state - *solid* or *ragdoll*. In solid state unit is staying, can jump and shoot. If unit dies - ragdoll state is enabling.
