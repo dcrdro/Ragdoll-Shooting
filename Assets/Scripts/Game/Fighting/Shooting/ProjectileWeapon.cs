@@ -18,6 +18,8 @@ namespace Game.Fighting.Shooting
                 derived.Origin = Origin;
             }
             ((IProjectile) instance).Launch(shootPoint.right * projectileSpeed);
+            
+            NotifyShot(instance.gameObject);
         }
     }
 }

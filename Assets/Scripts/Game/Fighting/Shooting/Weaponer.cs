@@ -8,19 +8,21 @@ namespace Game.Fighting.Shooting
     {
         [SerializeField] private WeaponBase weapon;
 
+        public WeaponBase Weapon => weapon;
+        
         public GameObject Origin { get; set; }
-    
+
         public event Action WeaponApplied;
 
         private void Start()
         {
-            weapon.Origin = Origin;
+            Weapon.Origin = Origin;
         }
 
         [ContextMenu("ApplyWeapon test")]
         public void ApplyWeapon()
         {
-            weapon.Shoot();
+            Weapon.Shoot();
             WeaponApplied?.Invoke();
         }
     }
