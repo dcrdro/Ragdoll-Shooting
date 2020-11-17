@@ -1,4 +1,4 @@
-# Ragdoll Shooting project
+# Ragdoll Shooting
 
 ℹ⚠ ***Important: this is a constantly updated document. For now it may not contain full documentation of project. It's better to see the sources directly.*** ⚠ℹ
 
@@ -6,27 +6,19 @@
 
 Ragdoll Shooting is a 2d side-view game, where player is fighting against bot. Shoot and avoid enemy's bullets and kill the enemy to win. Also there are some bonuses in the game, which are useful.
 
-<details>
- <summary>Screenshot</summary>
- 
- ![Overview](https://github.com/dcrdro/Ragdoll-Shooting/blob/master/Assets/Documentation~/overview.png)
- 
-</details>
-
 The purpose of this project is show how things work:
- - 2d gunfire based game
+ - building system on varied components
  - fighting (healh and damage) system
  - ragdoll usage
- - using of small, loosely-coupled components to create complex logic
- 
-<details>
- <summary>Gameplay</summary>
- 
- ![Gameplay](https://github.com/dcrdro/Ragdoll-Shooting/blob/master/Assets/Documentation~/ragdoll-shooting-gamplay.gif)
- 
-</details>
+ - 2d gunfire based game
 
-*All are created by me*
+The **core approach** of scripting is using of small, loosely-coupled **components** to create complex logic. These components are responsible for only **specific** things (like health / shooting / jumping). And like a **constructor**, whole behavior (eg. of unit) can be built from these components.
+
+Gameplay:
+
+ ![Gameplay](https://github.com/dcrdro/Ragdoll-Shooting/blob/master/Assets/Documentation~/ragdoll-shooting-gamplay.gif)
+
+*All art created by me*
 
 ## Roadmap
 
@@ -53,7 +45,9 @@ The purpose of this project is show how things work:
 - [ ] mvp adapting
 - [ ] import utilities from Profit package
 
-# Structure
+# Overview
+
+## Structure
 
 Game scene hierarchy structure is splitted into 3 global sections:
  - UI
@@ -81,7 +75,7 @@ Game scene hierarchy structure is splitted into 3 global sections:
  
  In this hierarchy world objects are placed - units; environment; holders for spawnable objects.
  
- Unit prefab has 2 variants - player and enemy. They both has many behavior **components attached** to them, which are defining the **unit behavior**. Below are the main ones.
+ Unit prefab has 2 variants - player and enemy. They both has many behavior **components attached** to them (according approach as stated before), which are defining the **unit behavior**. Below are the main ones.
  
  The components look like this:
  
