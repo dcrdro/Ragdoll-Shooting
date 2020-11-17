@@ -28,8 +28,8 @@ namespace Game.Bonuses
             GameObject bonusTarget = deathArgs.Origin;
             if (bonusTarget.TryGetComponent<IAttachmentHolder>(out var attachmentHolder))
             {
-                var instance = Instantiate(bonusPrefab, attachmentHolder.Holder);
-                instance.transform.localPosition = Vector3.zero;
+                var instance = Instantiate(bonusPrefab);
+                attachmentHolder.Attach(instance.transform, Vector3.zero);
             }
             Destroy(gameObject);
         }    
