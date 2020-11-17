@@ -4,6 +4,7 @@ namespace Core.General
 {
     public interface IAttachmentHolder
     {
-        Transform Holder { get; }    
+        void Attach(Transform attachment, Vector3 position);
+        Transform[] GetAttachments();
     }
 }

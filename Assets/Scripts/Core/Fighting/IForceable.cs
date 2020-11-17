@@ -1,6 +1,5 @@
 ﻿using System;
 using Core.Fighting.Args;
-using UnityEngine;
 
 namespace Core.Fighting
 {

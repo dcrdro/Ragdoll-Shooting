@@ -1,5 +1,4 @@
-﻿using Core.Effects;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game.Effects
 {
